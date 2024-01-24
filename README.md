@@ -2,4 +2,4 @@
 
 This repository contains code for an interactive information web app, created for the _Client-Side Web Development_ course at the UW iSchool.
 
-Names: Salley Fang, Chaeri Hong, Jason Yu
+Names: Salley Fang, Chaeri Hong, Jason Yu, Juliette Jones
