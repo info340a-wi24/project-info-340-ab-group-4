@@ -1,0 +1,55 @@
+/* Specific styles for the performance schedule website */
+
+/* Style the header with a theatrical theme */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
+
+/* Style the sections with a background color that complements the theme */
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+/* Apply a box shadow to sections for a subtle visual effect */
+section {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style links with a color that fits the entertainment theme */
+a {
+    color: #ff6600;
+}
+
+/* Apply a hover effect to links */
+a:hover {
+    color: #cc3300;
+    text-decoration: underline;
+}
+
+/* Style buttons with a vibrant color */
+.button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Apply a hover effect to buttons */
+.button:hover {
+    background-color: #cc3300;
+}
+
+/* Style paragraph text with a readable font and size */
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
