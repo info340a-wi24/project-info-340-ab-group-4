@@ -26,19 +26,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.button {
-    background-color: #ff6600;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #cc3300;
-}
-
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
