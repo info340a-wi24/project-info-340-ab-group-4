@@ -187,38 +187,4 @@ main {
         margin-bottom: 2em;
     }
 }
-/* 
-.bar {
-    display: block;
-    width: 1.5em;
-    height: 0.25em;
-    margin: 0.75px auto;
-    background-color: white;
-} */
 
-/* Media query for mobile devices */
-/* @media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 10em;
-        gap: 0;
-        flex-direction: column;
-        background-color:#B6433E;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-    }
-
-    .nav-item {
-        margin: 1em 0;
-    }
-
-    .nav-menu.active {
-        left:
-    }
-} */
