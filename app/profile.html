@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seattle Curtain Call</title>
+
+    <!-- normalize.css for cross-browser stuff -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+
+    <!-- include required font -->  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- author names? date? -->
+    <meta name="description" content="Home page with a fixed nav bar and footer">
+    <meta name="author" content="Juliette Jones, Salley Fang">
+    <!--put favicon HERE-->
+    <link rel="icon" type="image/png" href="img/CurtainCallIcon4.png">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/CurtainCallLogo.png" aria-label="Logo with gold theatrical curtains that says Seattle Curtain Call">
+            </a>
+        </div>
+        <!-- <div class="search">
+            <form>
+                <input type="text" placeholder="Search...">
+                <button type="'submit">Go</button>
+            </form>
+        </div> -->
+        <nav id = "hamburger-nav">
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger"/>
+            <div id="hamburger-items">
+                <a href="calendar.html">Events Calendar</a>
+                <a href="#">Events List</a>
+                <a href="#">Events Submissions</a>
+                <a href="profile.html">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="profile-page">
+            <h1>Account Settings</h1>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="" /><br>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="" /><br>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="" /><br>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">Birth Date:</label>
+                    <input type="text" id="birthdate" name="birthdate" value="" /><br>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <ul>
+            <li>&copy; Seattle Curtain Call</li>
+            <li>Authors: Juliette Jones, Salley Fang, Jason Yu, Chaeri Hong</li>
+            <li><a href="mailto:info@seacurtaincall.com">info@seacurtaincall.com</a></li>
+        </ul>
+    </footer>
+</body>

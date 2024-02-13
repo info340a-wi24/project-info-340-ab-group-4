@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seattle Curtain Call</title>
+
+    <!-- normalize.css for cross-browser stuff -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+
+    <!-- include required font -->  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- author names? date? -->
+    <meta name="description" content="Home page with a fixed nav bar and footer">
+    <meta name="author" content="Juliette Jones, Salley Fang">
+    <!--put favicon HERE-->
+    <link rel="icon" type="image/png" href="img/CurtainCallIcon4.png">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="img/CurtainCallLogo.png" aria-label="Logo with gold theatrical curtains that says Seattle Curtain Call">
+            </a>
+        </div>
+        <!-- <div class="search">
+            <form>
+                <input type="text" placeholder="Search...">
+                <button type="'submit">Go</button>
+            </form>
+        </div> -->
+        <nav id = "hamburger-nav">
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger"/>
+            <div id="hamburger-items">
+                <a href="calendar.html">Events Calendar</a>
+                <a href="#">Events List</a>
+                <a href="#">Events Submissions</a>
+                <a href="profile.html">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card-container">
+            <div class="card">
+                <img src="img/quixote-4.jpg" aria-label="Quixote Nuevo stage performance">
+                <div class="card-content">
+                    <h3>Quixote Nuevo</h3>
+                    <p>“Brilliant yet accessible, visually stunning,
+                        and truly fun despite being emotionally complex.” - DailyUW</p>
+                    <a href="event-card.html" class="btn" aria-label="Link to Quixote Nuevo event page">Event Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/dance-4.jpg" aria-label="Gasango Music & Dance performance">
+                <div class="card-content">
+                    <h3>Gasango Music & Dance</h3>
+                    <p>Gansango Music & Dance presents traditional and contemporary dance and music from West Africa – drawing on the stunning talent of multicultural dancers and musicians.
+                    </p>
+                    <a href="" class="btn" aria-label="Link to Gasango Music & Dance event page">Event Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/local-concert.jpg" aria-label="Band playing at The Crocodile">
+                <div class="card-content">
+                    <h3>Concerts at The Crocodile</h3>
+                    <p>The Crocodile has been the soundtrack of Belltown, hosting incredible bands including Nirvana, Yoko Ono, Pearl Jam, R.E.M., Lizzo, and Billie Eilish. If you didn’t know, we’ve moved a few blocks, but don’t you worry, the “new” Croc is like the old Croc but better and a hell of a lot bigger.</p>
+                    <a href="" class="btn" aria-label="Link to The Crocodile event page">Event Details</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="img/seattle-shakespeare.jpg" aria-label="Seattle Shakespeare Company cast photograph">
+                <div class="card-content">
+                    <h3>Seattle Shakespeare Company</h3>
+                    <p>Jimmy Shields makes his Seattle Shakespeare directorial debut following his appearance as Sir Andrew Aguecheek in 2023’s Twelfth Night. Originally adapted for Wooden O, this small ensemble version of The Comedy of Errors cleaves right to the heart of the comedy and features actors playing their own twins to hilarious effect.
+                    </p>
+                    <a href="" class="btn" aria-label="Link to Seattle Shakespeare Company event page">Event Details</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <ul>
+            <li>&copy; Seattle Curtain Call</li>
+            <li>Authors: Juliette Jones, Salley Fang, Jason Yu, Chaeri Hong</li>
+            <li><a href="mailto:info@seacurtaincall.com">info@seacurtaincall.com</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
