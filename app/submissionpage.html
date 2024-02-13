@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seattle Curtain Call</title>
+
+    <!-- normalize.css for cross-browser stuff -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+
+    <!-- include required font -->  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- author names? date? -->
+    <meta name="description" content="Home page with a fixed nav bar and footer">
+    <meta name="author" content="Juliette Jones, Salley Fang">
+    <!--put favicon HERE-->
+    <link rel="icon" type="image/png" href="img/CurtainCallIcon4.png">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="img/CurtainCallLogo.png" alt="Logo with gold theatrical curtains that says Seattle Curtain Call">
+            </a>
+        </div>
+        <!-- <div class="search">
+            <form>
+                <input type="text" placeholder="Search...">
+                <button type="'submit">Go</button>
+            </form>
+        </div> -->
+        <nav id = "hamburger-nav">
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger"/>
+            <div id="hamburger-items">
+                <a href="calendar.html">Events Calendar</a>
+                <a href="#">Events List</a>
+                <a href="#">Events Submissions</a>
+                <a href="#">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- Submission Form -->
+    <main>
+        <section class="form">
+            <h1>Shine on Our Stage</h1>
+            <p id="com">Don't let any performance go unnoticed</p>
+            <form>
+                <section class="part">
+                    <h2 class="F1">Event Information</h2>
+                    <div>
+                        <p><label for="EventName">Event Name:</label> <input id="name"></p>
+                        <p><label for="EventDes">Description:</label> <input id="des" placeholder="A overview of this event"></p>
+                        <p><label for="Type:">Performance Type:</label> <input id="type" placeholder="(e.g., dance, theater)."></p>
+                        <p><label for="Date">Event Date(s):</label> <input id="date_input" placeholder="day/month/year"></p>
+                        <p><label for="Time">Event Time(s):</label> <input id="time_input" placeholder="Start and end time"></p>
+                        <p><label for="Location">Location:</label> <input id="loca_input"></p>
+                    </div>
+                </section>
+
+                <section class="part">
+                    <h2 class="F2">Contact Information</h2>
+                    <div>
+                        <p><label for="email_input">Email:</label> <input id="email_input" placeholder="email@domain.com" type="email" name="email"></p>
+                        <p><label for="phone_number">phone number:</label> <input id="phone_input"></p>
+                        <p><label for="organizerURL">Link to organizer:</label><input id="officeURL" placeholder="Official website link"></p>
+                    </div>
+                </section>
+
+                <section class="part">
+                    <h2 class="F3">Participant Information</h2>
+                    <div>
+                        <p><label id="Performer">Performer(s) Name:</label> <input id="pername" ></p>
+                        <p><label id="BgInfo">Background Information:</label> <input id="intro"></p>
+                    </div>
+                </section>
+
+                <section class="part">
+                <h2 class="F4">Additional Information</h2>
+                    <div>
+                        <p><label for="OfficialTicketLink">Official Ticket Link</label> <input id="tkURL" placeholder="URL"></p>
+                        <p><label for="Poster/Image">Event Poster/Image:</label> <input id="poster" placeholder="Uploade a Image"></p>
+                        <p><label for="SocialMedia">Social Media Links:</label> <input id="medialink" placeholder="URL"></p>
+                        <p><label for="notes">Any Additional Notes:</label> <input id="addinfo" placeholder="More Information"></p>
+                    </div>
+                </section>
+                <button type="submit"><i aria-label="Submit">Submit</i></button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <ul>
+            <li>&copy; Seattle Curtain Call</li>
+            <li>Authors: Juliette Jones, Salley Fang, Jason Yu, Chaeri Hong</li>
+            <li><a href="mailto:info@seacurtaincall.com">info@seacurtaincall.com</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
