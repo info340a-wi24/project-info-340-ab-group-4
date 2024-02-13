@@ -389,6 +389,8 @@ main {
     width: 20em;
     /* adjust if needed to control width of rectangle */
     margin: 2em;
+    justify-content: center;
+    align-items: center;
 }
 
 #profile-page h1 {
@@ -432,6 +434,10 @@ main {
     background-color: #0056b3;
 }
 
+#calendar h1 {
+    color: white;
+}
+
 /* Footer CSS */
 /* Juliette */
 .footer {
@@ -465,7 +471,6 @@ main {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        /* align-items: flex-start; */
     }
 
     .event-card {
