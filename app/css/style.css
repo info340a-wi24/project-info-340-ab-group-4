@@ -36,6 +36,7 @@ section {
 }
 
 /* NAV BAR */
+/* Juliette & Salley */
 #hamburger-nav {
     width: 100%;
     text-align: right;
@@ -92,6 +93,7 @@ section {
 }
 
 /* HOME PAGE CARDS */
+/* Salley */
 .container {
     max-width: 100%;
     margin: auto;
@@ -163,6 +165,7 @@ main {
 }
 
 /* EVENT CARD */
+/* Salley */
 .event-card-container {
     background-color: #66736C;
     display: flex;
@@ -176,6 +179,7 @@ main {
 }
 
 /* EVENT AND SCHEDULE */
+/* Salley */
 .event-schedule-container {
     display: flex;
     justify-content: space-between;
@@ -184,6 +188,7 @@ main {
 }
 
 /* event image, name, theater */
+/* Salley */
 .event-card {
     text-align: center;
     margin-top: 1em;
@@ -204,13 +209,13 @@ main {
 }
 
 .name-theater-section h2 {
-    font-size: 6em;
+    font-size: 4.5em;
     margin-top: 0.1em;
     text-align: left;
 }
 
 .name-theater-section h3 {
-    font-size: 3em;
+    font-size: 2em;
     color: #CFB034;
     margin-top: 0.5em;
     margin-bottom: 1em;
@@ -218,6 +223,7 @@ main {
 }
 
 /* schedule section */
+/* Salley */
 .schedule {
     margin-top: 1em;
     width: 90%;
@@ -276,6 +282,7 @@ main {
 }
 
 /* ABOUT THE EVENT AND REVIEWS */
+/* Salley */
 .about-review-container {
     display: flex;
     justify-content: space-between;
@@ -286,6 +293,7 @@ main {
 }
 
 /* about section */
+/* Salley */
 .about-section,
 .review-section {
     background-color: #3F4E51;
@@ -311,6 +319,7 @@ main {
 }
 
 /* review section */
+/* Salley */
 .review-section ul li {
     color: lightgray;
     font-size: 1em;
@@ -318,6 +327,7 @@ main {
 }
 
 /* PERFORMERS */
+/* Salley */
 .performer-container {
     display: flex;
     justify-content: space-between;
@@ -370,6 +380,7 @@ main {
 }
 
 /* PROFILE PAGE */
+/* Salley */
 #profile-page {
     background-color: lightgray;
     border-radius: 1em;
@@ -422,6 +433,7 @@ main {
 }
 
 /* Footer CSS */
+/* Juliette */
 .footer {
     background-color: white;
     color: black;
@@ -439,7 +451,16 @@ main {
 }
 
 /* ADJUSTED FOR MOBILE */
+/* Salley */
 @media (min-width: 768px) {
+    .name-theater-section h2 {
+        font-size: 6em;
+    }
+
+    .name-theater-section h3 {
+        font-size: 3em;
+    }
+
     .event-schedule-container {
         display: flex;
         flex-direction: row;
@@ -491,6 +512,7 @@ main {
 }
 
 /* Month header */
+/* Juliette */
 .month {
     padding: 0px 25px;
     width: 100%;
@@ -502,6 +524,7 @@ main {
 }
 
 /* Month list */
+/* Juliette */
 .month ul {
     display: flex;
     margin: 0;
@@ -517,18 +540,21 @@ main {
 }
 
 /* Previous button inside month header */
+/* Juliette */
 .month .prev {
     padding-top: 10px;
     margin-right: auto;
 }
 
 /* Next button */
+/* Juliette */
 .month .next {
     padding-top: 10px;
     margin-left: auto;
 }
 
 /* Weekdays */
+/* Juliette */
 .weekdays {
     margin: 0;
     padding: 10px 0;
@@ -545,6 +571,7 @@ main {
 }
 
 /* Days (1-28) */
+/* Juliette */
 .days {
     padding: 0px 0;
     background: #eee;
@@ -566,6 +593,7 @@ main {
     border-style: solid;
 }
 
+/* Juliette */
 @media (max-width: 768px) {
 
     /* Month header */
@@ -616,6 +644,7 @@ main {
 }
 
 /* Dropdown button */
+/* Juliette */
 .dropbtn {
     background-color: #CFB034;
     color: black;
@@ -626,6 +655,7 @@ main {
 }
 
 /* Dropdown content */
+/* Juliette */
 .dropdown-content {
     display: none;
     background-color: lightgray;
@@ -634,6 +664,7 @@ main {
 }
 
 /* Show dropdown content on hover */
+/* Juliette */
 .dropdown:hover .dropdown-content {
     display: flex;
     flex-direction: column;
@@ -641,6 +672,7 @@ main {
 }
 
 /* Style dropdown links */
+/* Juliette */
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -649,6 +681,7 @@ main {
 }
 
 /* Change color of dropdown links on hover */
+/* Juliette */
 .dropdown-content a:hover {
     background-color: rgb(232, 232, 232);
     border-radius: 10px;
@@ -666,7 +699,8 @@ main {
     }
 }
 
-/*form*/
+/* FORM */
+/* Jason */
 main section.form {
     font-size: 25px;
     text-align: center;
