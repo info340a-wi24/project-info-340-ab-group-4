@@ -8,10 +8,13 @@ import { Routes, Route, Navigate, Link} from 'react-router-dom';
 
 function App() {
     return (
-        <Router>
-            <Header />
-            
-            <Footer />
-        </Router>
+        <BrowserRouter>
+            <Router>
+                <Header />
+                
+                <Footer />
+            </Router>
+        </BrowserRouter>
+
     )
 }
