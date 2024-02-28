@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header() {
     return (
         <header>
             <div className="logo">
-                <Link to="/"></Link>
+                <Link to="/images/CurtainCallLogo.png">Seattle Curtain Call</Link>
             </div>
             <nav id="hamburger-nav">
                 <label htmlFor="hamburger">&#9776;</label>
