@@ -10,7 +10,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: url("../img/CurtainCallBackground.jpg") rgba(182, 67, 62, 0.8);
+    background: url("../public/images/CurtainCallBackground.jpg") rgba(182, 67, 62, 0.8);
     background-blend-mode: multiply;
     background-size: 1500px;
     height: 200px;
@@ -157,11 +157,26 @@ main {
 .card-content .btn {
     display: inline-block;
     padding: 0.2em 0.5em;
-    background-color: #66746C;
-    color: #fff;
+    background-color: #CFB034;
+    color: black;
     text-decoration: none;
     border-radius: 0.2em;
     margin-top: 1em;
+}
+
+/* EVENT PAGE */
+.event-page-card {
+    width: 25em;
+    background-color: #fff;
+    border-radius: 0.5em;
+    overflow: hidden;
+    box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0);
+    margin: 2.6em;
+}
+
+.event-page-card img {
+    width: 100%;
+    height: auto;
 }
 
 /* EVENT CARD */
@@ -209,15 +224,22 @@ main {
 }
 
 .name-theater-section h2 {
-    font-size: 4.5em;
+    font-size: 4em;
     margin-top: 0.1em;
     text-align: left;
 }
 
 .name-theater-section h3 {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #CFB034;
     margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+.name-theater-section h4 {
+    font-size: 1.5em;
+    color: white;
     margin-bottom: 1em;
     text-align: left;
 }
@@ -236,20 +258,20 @@ main {
 
 .schedule h2 {
     font-size: 1.8em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .schedule h3 {
-    font-size: 1em;
-    margin: 0.5em;
-    margin-top: 1.2em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    /* margin-top: 1em; */
 }
 
 .date-time {
     margin-bottom: 1em;
 }
 
-.date-time h3 {
+.date-time h4 {
     font-size: 1.2em;
 }
 
@@ -297,18 +319,18 @@ main {
 .about-section,
 .review-section {
     background-color: #3F4E51;
-    padding: 2em;
+    padding: 1em 1.5em 1.5em 1.5em;
     margin-top: 2em;
     color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.8em;
 }
 
 .about-section h2,
 .review-section h2 {
     color: #CFB034;
     font-size: 1.8em;
-    margin-bottom: 1em;
-    margin-top: 0.2em;
+    margin-bottom: 0.5em;
 }
 
 .about-section p {
@@ -324,6 +346,7 @@ main {
     color: lightgray;
     font-size: 1em;
     margin-top: 3em;
+    border-radius: 0.8em;
 }
 
 /* PERFORMERS */
@@ -460,7 +483,7 @@ main {
 /* Salley */
 @media (min-width: 768px) {
     .name-theater-section h2 {
-        font-size: 6em;
+        font-size: 5em;
     }
 
     .name-theater-section h3 {

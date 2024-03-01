@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
 
-function HomePage({ image, alt, eventName, condensedDescription, eventId }) {
+function EventPage({ image, alt, eventName, condensedDescription, eventId }) {
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -11,7 +11,7 @@ function HomePage({ image, alt, eventName, condensedDescription, eventId }) {
     };
 
     return (
-        <div className="card">
+        <div className="event-page-card">
             <img src={image} alt={alt} />
             <div className="card-content">
                 <h3>{eventName}</h3>
@@ -22,4 +22,5 @@ function HomePage({ image, alt, eventName, condensedDescription, eventId }) {
     );
 }
 
-export default HomePage;
+
+export default EventPage;
