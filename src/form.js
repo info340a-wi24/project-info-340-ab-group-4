@@ -10,7 +10,7 @@ function Form(){
     const [submissionMessage, setSubmissionMessage] = useState('');
 
     const valid = () => {
-        if (!eventName || !eventDate || !startTime) {
+        if (eventName === '' || eventDate === '' || startTime === '') {
             setShowWarning(true);
             document.getElementById('name').scrollIntoView();
             return false;
@@ -45,7 +45,7 @@ function Form(){
                         <div>
                         <label>Event Name:</label>
                         <input id="name" className="form-control" value={eventName} onChange={vl => setEventName(vl.target.value)} />
-                        {showWarning && !eventName && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}
+                        {showWarning && eventName === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}
                         </div>
 
                         
@@ -58,13 +58,13 @@ function Form(){
                         <div>
                             <label>Event Date:</label>
                             <input id="date_input" className="form-control" type='date' value={eventDate} onChange={vl => setEventDate(vl.target.value)} />
-                            {showWarning && !eventDate && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}
+                            {showWarning && eventDate === '' && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}
                         </div>
 
                         <div>
                             <label>Start Time:</label>
                             <input id="time_input1" className="form-control" type='time' value={startTime} onChange={vl => setStartTime(vl.target.value)} />
-                            {showWarning && !startTime && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}
+                            {showWarning && startTime === '' && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}
                         </div>
 
 
