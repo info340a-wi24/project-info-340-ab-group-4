@@ -706,6 +706,11 @@ main {
 
 /* FORM */
 /* Jason */
+
+.warning {
+    color: red;
+}
+
 main section.form {
     font-size: 25px;
     text-align: center;

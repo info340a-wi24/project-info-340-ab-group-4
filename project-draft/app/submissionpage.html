@@ -18,6 +18,7 @@
     <meta name="author" content="Jason Yu">
     <!--put favicon HERE-->
     <link rel="icon" type="image/png" href="img/CurtainCallIcon4.png">
+    <style> .warning {color: red;} </style>
 </head>
 
 <body>
@@ -39,28 +40,36 @@
         </nav>
     </header>
 
-    <!-- Submission Form -->
+    
+    <!-- Submission Form -->  
     <main>
         <section class="form">
+
             <h1>Shine on Our Stage</h1>
             <p id="com">Don't let any performance go unnoticed</p>
+            
             <form>
                 <section class="part">
                     <h2 class="F1">Event Information</h2>
                     <div>
-                        <p><label for="EventName">Event Name:</label> <input id="name"></p>
+                        <p><label for="EventName">Event Name:</label> <input id="name" class="form-control"><div id="namewarning" class="warning"></div></p>
+                    </div>
+                    <div>
                         <p><label for="EventDes">Description:</label> <input id="des" placeholder="A overview of this event"></p>
                         <p><label for="Type:">Performance Type:</label> <input id="type" placeholder="(e.g., dance, theater)."></p>
-                        <p><label for="Date">Event Date(s):</label> <input id="date_input" placeholder="day/month/year"></p>
-                        <p><label for="Time">Event Time(s):</label> <input id="time_input" placeholder="Start and end time"></p>
-                        <p><label for="Location">Location:</label> <input id="loca_input"></p>
+                    </div>
+                    <div>
+                        <p><label for="Date">Event Date:</label> <input id="date_input" type="date" class="form-control" placeholder="month/day/year"><div id="datewarning" class="warning"></div></p>
+                        <p><label for="STime">Start Time:</label> <input id="time_input1" type="time" class="form-control"><div id="timewarning1" class="warning"></div></p>
+                        <p><label for="ETime">End Time:</label> <input id="time_input2" type="time" class="form-control"><div id="timewarning2" class="warning"></div></p>
+                        <p><label for="Location">Location:</label> <input id="loca_input" class="form-control" ><div id="locationwarning" class="warning"></div></p>
                     </div>
                 </section>
 
                 <section class="part">
                     <h2 class="F2">Contact Information</h2>
                     <div>
-                        <p><label for="email_input">Email:</label> <input id="email_input" placeholder="email@domain.com" type="email" name="email"></p>
+                        <p><label for="email_input">Email:</label> <input id="email_input" type="email" placeholder="email@domain.com" type="email" name="email"></p>
                         <p><label for="phone_number">phone number:</label> <input id="phone_input"></p>
                         <p><label for="organizerURL">Link to organizer:</label><input id="officeURL" placeholder="Official website link"></p>
                     </div>
@@ -78,12 +87,12 @@
                 <h2 class="F4">Additional Information</h2>
                     <div>
                         <p><label for="OfficialTicketLink">Official Ticket Link</label> <input id="tkURL" placeholder="URL"></p>
-                        <p><label for="Poster/Image">Event Poster/Image:</label> <input id="poster" placeholder="Uploade a Image"></p>
+                        <p><label for="Poster/Image">Poster:</label> <input id="poster" type="file" accept="image/*"></p>
                         <p><label for="SocialMedia">Social Media Links:</label> <input id="medialink" placeholder="URL"></p>
-                        <p><label for="notes">Any Additional Notes:</label> <input id="addinfo" placeholder="More Information"></p>
+                        <p><label for="notes">Additional Info:</label> <input id="addinfo" placeholder="More Information"></p>
                     </div>
                 </section>
-                <button type="submit"><i alt="Submit">Submit</i></button>
+                <button type="submit"><i aria-label="Submit">Submit</i></button>
             </form>
         </section>
     </main>
@@ -95,5 +104,9 @@
             <li><a href="mailto:info@seacurtaincall.com">info@seacurtaincall.com</a></li>
         </ul>
     </footer>
+
+    <script src="project-info-340-ab-group-4\src\form.js"></script>
+
 </body>
 </html>
+

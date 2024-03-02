@@ -8,6 +8,7 @@ import eventsData from './events-data.json';
 import EventPage from './event-page';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Calendar from './calendar';
+import Form from './form';
 
 const Placeholder = () => null;
 
@@ -36,7 +37,7 @@ function App() {
                         ))}
                     </main>
                 )} />
-                <Route path="/submission" element={<Placeholder />} />
+                <Route path="/submission" element={<Form />} />
                 <Route path="/profile" element={<Placeholder />} />
                 {/* search bar */}
                 
