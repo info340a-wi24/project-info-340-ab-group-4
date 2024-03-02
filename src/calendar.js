@@ -45,9 +45,9 @@ function Calendar() {
     };
 
     const events = [
-        { title: 'As You Like It', start: '2024-02-01', genre: 'plays', size: 'medium', cost: 'high'},
-        { title: 'Sweeney Todd', start: '2024-02-03', genre: 'musicals', size: 'large', cost: 'low'},
-        { title: 'Coppelia', start: '2024-02-07', genre: 'dance', size: 'small', cost: 'medium'}
+        { title: 'As You Like It', start: '2024-03-01', genre: 'plays', size: 'medium', cost: 'high'},
+        { title: 'Sweeney Todd', start: '2024-03-03', genre: 'musicals', size: 'large', cost: 'low'},
+        { title: 'Coppelia', start: '2024-03-07', genre: 'dance', size: 'small', cost: 'medium'}
         // Add more events with categories
     ];
 
