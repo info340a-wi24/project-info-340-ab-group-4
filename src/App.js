@@ -1,12 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import HomePage from './home-page';
 import EventCard from './event-card';
 import eventsData from './events-data.json';
-// import performerData from './performers.json';
 import EventPage from './event-page';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Calendar from './calendar';
 import Form from './form';
 
@@ -14,6 +13,19 @@ const Placeholder = () => null;
 
 function App() {
     const firstFourEvents = eventsData.slice(0, 4);
+
+    const [search, setSearch] = useState('');
+    const [filteredEvents, setFilteredEvents] = useState(eventsData);
+    // event listener for search bar
+    const handleSearch = () => {
+        const newFilteredEvents = eventsData.filter(event =>
+            event.eventName.toLowerCase().includes(search.toLowerCase())
+        );
+        setFilteredEvents(newFilteredEvents);
+    };
+    const handleInput = (event) => {
+        setSearch(event.target.value);
+    };
 
     return (
         <BrowserRouter>
@@ -24,23 +36,34 @@ function App() {
                 <Route path="/events/:eventId" element={<EventPage />} />
                 {/* EVENTS PAGE */}
                 <Route path="/events" element={(
-                    <main className="card-container">
-                        {eventsData.map((event, index) => (
-                            <EventPage
-                                key={index}
-                                eventId={index} 
-                                image={event.image}
-                                alt={event.alt}
-                                eventName={event.eventName}
-                                condensedDescription={event.condensedDescription}
+                    <div>
+                        <div className="search-container">
+                            <input
+                                type="text"
+                                className='search-bar'
+                                placeholder='Search events...'
+                                value={search}
+                                onChange={handleInput}
                             />
-                        ))}
-                    </main>
+                            <button className="search-button" onClick={handleSearch}>Search</button>
+                        </div>
+                        <main className="card-container">
+                            {filteredEvents.map((event, index) => (
+                                <EventPage
+                                    key={index}
+                                    eventId={index} 
+                                    image={event.image}
+                                    alt={event.alt}
+                                    eventName={event.eventName}
+                                    condensedDescription={event.condensedDescription}
+                                />
+                            ))}
+                        </main>
+                    </div>
+
                 )} />
                 <Route path="/submission" element={<Form />} />
                 <Route path="/profile" element={<Placeholder />} />
-                {/* search bar */}
-                
 
                 {/* HOME PAGE */}
                 <Route path="/" element={(
@@ -53,8 +76,6 @@ function App() {
                                 alt={item.alt}
                                 eventName={item.eventName}
                                 condensedDescription={item.condensedDescription} />
-                                // indicate if is first child to make card bigger
-                                // isFirstCard={index === 0} />
                         ))}
                     </main>
                 )} />

@@ -74,6 +74,7 @@ section {
     }
 
     #hamburger-nav label {
+        border-radius: .4em;
         display: inline-block;
         color: white;
         background: #CFB034;
@@ -117,20 +118,20 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 5em;
+    margin-top: 1em;
 }
 
 .card {
-    width: 20em;
+    width: 23em;
     background-color: #fff;
     border-radius: 0.5em;
     overflow: hidden;
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0);
-    margin: 2em;
+    margin: 2.5em;
 }
 
 .card:first-child {
-    flex: 0 0 80%;
+    flex: 0 0 75%;
 }
 
 .card img {
@@ -177,6 +178,38 @@ main {
 .event-page-card img {
     width: 100%;
     height: auto;
+}
+
+/* event page search bar */
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container .search-bar {
+    border: .2em solid #CFB034;
+    border-radius: 1em;
+    height: 3em;
+    width: 20em;
+    padding: 0.8em;
+    background-color: white;
+    margin-top: 3em;
+    font-size: 1em;
+    color: #3F4E51;
+}
+
+.search-container .search-button {
+    border: .2em solid #CFB034;
+    border-radius: 1em;
+    height: 2.5em;
+    width: 4em;
+    background-color: white;
+    font-size: 0.9em;
+    margin-top: 3.2em;
+    margin-left: 0.6em;
+    color: #3F4E51;
 }
 
 /* EVENT CARD */
@@ -264,7 +297,6 @@ main {
 .schedule h3 {
     font-size: 1.2em;
     margin-bottom: 1em;
-    /* margin-top: 1em; */
 }
 
 .date-time {
@@ -482,6 +514,16 @@ main {
 /* ADJUSTED FOR MOBILE */
 /* Salley */
 @media (min-width: 768px) {
+    .search-container .search-bar {
+        width: 28em;
+    }
+    
+    .search-container .search-button {
+        margin-top: 3em;
+        width: 5em;
+        font-size: 1em;
+    }
+
     .name-theater-section h2 {
         font-size: 5em;
     }
