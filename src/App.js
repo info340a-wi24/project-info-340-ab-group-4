@@ -8,6 +8,7 @@ import eventsData from './events-data.json';
 import EventPage from './event-page';
 import Calendar from './calendar';
 import Form from './form';
+import Profile from './profile';
 
 const Placeholder = () => null;
 
@@ -63,7 +64,7 @@ function App() {
 
                 )} />
                 <Route path="/submission" element={<Form />} />
-                <Route path="/profile" element={<Placeholder />} />
+                <Route path="/profile" element={<Profile />} />
 
                 {/* HOME PAGE */}
                 <Route path="/" element={(
