@@ -64,7 +64,7 @@ function Form(){
                         <div>
                             <label>Start Time:</label>
                             <input id="time_input1" className="form-control" type='time' value={startTime} onChange={vl => setStartTime(vl.target.value)} />
-                            {showWarning && !eventDate && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}
+                            {showWarning && !startTime && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}
                         </div>
 
 
