@@ -105,7 +105,7 @@ function Form(){
                             <p><label for="notes">Additional Info:</label> <input id="addinfo" placeholder="More Information"/></p>
                         </div>
                     </section>
-                    <button type="submit"><i aria-label="Submit">Submit</i></button>
+                    <button type="submit"><i alt="Submit">Submit</i></button>
                 </form>
             </section>
         </main>
