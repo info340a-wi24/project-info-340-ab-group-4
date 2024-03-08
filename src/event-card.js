@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function EventCard({ eventName, venue, startDate, endDate, address, description, link, image, alt, reviewOne, reviewTwo }) {
+    const [loading, setLoading] = useState(false);
+
+    const handleClick = () => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000); // delay by 1 second
+    }
+
     return (
         <main>
         <div className="event-card-container">
@@ -23,50 +32,50 @@ function EventCard({ eventName, venue, startDate, endDate, address, description,
                     <div className="date-time">
                         <h4>Jan 3</h4>
                         <ul>
-                            <li>2:00 PM <Link to={link}  className="ticket-status">Low Tix!</Link></li>
-                            <li>7:00 PM <Link to={link}  className="ticket-status">SOLD OUT</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'Low Tix!'}</Link></li>
+                            <li>7:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'SOLD OUT'}</Link></li>
                         </ul>
                     </div>
                     <div className="date-time">
                         <h4>Jan 5</h4>
                         <ul>
-                            <li>2:00 PM <Link to={link}  className="buy-ticket">Available</Link></li>
-                            <li>7:00 PM <Link to={link}  className="ticket-status">Low Tix!</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'Low Tix!'}</Link></li>
                         </ul>
                     </div>
                     <div className="date-time">
                         <h4>Jan 8</h4>
                         <ul>
-                            <li>2:00 PM <Link to={link}  className="buy-ticket">Available</Link></li>
-                            <li>7:00 PM <Link to={link}  className="buy-ticket">Available</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
                         </ul>
                     </div>
                     <div className="date-time">
                         <h4>Jan 9</h4>
                         <ul>
-                            <li>2:00 PM <Link to={link}  className="ticket-status">Low Tix!</Link></li>
-                            <li>7:00 PM <Link to={link}  className="ticket-status">Low Tix!</Link></li>
+                            <li>7:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'SOLD OUT'}</Link></li>
+                            <li>7:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'SOLD OUT'}</Link></li>
                         </ul>
                     </div>
                     <div className="date-time">
                         <h4>Jan 12</h4>
                         <ul>
-                            <li>2:00 PM <Link to={link}  className="buy-ticket">Available</Link></li>
-                            <li>7:00 PM <Link to={link}  className="ticket-status">Low Tix!</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'Low Tix!'}</Link></li>
                         </ul>
                     </div>
                     <div className="date-time">
                         <h4>Jan 13</h4>
                         <ul>
-                            <li>2:00 PM <Link to={link}  className="buy-ticket">Available</Link></li>
-                            <li>7:00 PM <Link to={link}  className="buy-ticket">Available</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
                         </ul>
                     </div>
                     <div className="date-time">
                         <h4>Jan 16</h4>
                         <ul>
-                            <li>2:00 PM <Link to={link}  className="buy-ticket">Available</Link></li>
-                            <li>7:00 PM <Link to={link}  className="ticket-status">Low Tix!</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
+                            <li>2:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'Low Tix!'}</Link></li>
                         </ul>
                     </div>
                 </div>

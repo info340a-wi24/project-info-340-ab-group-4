@@ -212,6 +212,10 @@ main {
     color: #3F4E51;
 }
 
+.search-button:hover {
+    cursor: pointer;
+}
+
 /* EVENT CARD */
 /* Salley */
 .event-card-container {
