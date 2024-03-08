@@ -165,6 +165,22 @@ main {
     margin-top: 1em;
 }
 
+/* SIGN IN PAGE */
+.sign-in-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30em; 
+}
+
+.sign-in-box {
+    width: 25em;
+    padding: 5em;
+    border: .2em solid white;
+    border-radius: 0.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 /* EVENT PAGE */
 .event-page-card {
     width: 25em;

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import HomePage from './home-page';
@@ -9,28 +9,43 @@ import EventPage from './event-page';
 import Calendar from './calendar';
 import Form from './form';
 import Profile from './profile';
+import SignIn from './sign-in-page';
 
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from './Config';
-import { getAnalytics } from "firebase/analytics";
 import {
     getAuth,
     onAuthStateChanged,
     signOut
   } from 'firebase/auth';
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getDatabase();
-const analytics = getAnalytics(app);
+// const db = getDatabase();
 
 function App() {
     const firstFourEvents = eventsData.slice(0, 4);
 
     const [search, setSearch] = useState('');
     const [filteredEvents, setFilteredEvents] = useState(eventsData);
+    const [currentUser, setCurrentUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          setCurrentUser(user);
+        });
+        return unsubscribe;
+    }, []);
+
+    const handleSignOut = async() => {
+        try {
+            await signOut(auth);
+            setCurrentUser(null);
+        } catch (error) {
+            console.error('Error signing out:', error);
+        }
+    };
+
     // event listener for search bar
     const handleSearch = () => {
         const newFilteredEvents = eventsData.filter(event =>
@@ -46,8 +61,7 @@ function App() {
         <BrowserRouter>
             <Header />
             <Routes>
-                {/* HEADER */}
-                <Route path="/calendar" element={<Calendar />} />
+                {/* EVENT CARD */}
                 <Route path="/events/:eventId" element={<EventPage />} />
                 {/* EVENTS PAGE */}
                 <Route path="/events" element={(
@@ -77,8 +91,17 @@ function App() {
                     </div>
 
                 )} />
-                <Route path="/submission" element={<Form />} />
-                <Route path="/profile" element={<Profile />} />
+
+                {/* <Route path="/submission" element={<Form />} />
+                <Route path="/profile" element={<Profile />} /> */}
+                {/* protected routes for submission and profile */}
+                {/* CALENDAR */}
+                <Route path="/calendar" element={currentUser ? <Calendar /> : <Navigate to="/signin"  />} />
+                <Route path="/submission" element={currentUser ? <Form /> : <Navigate to="/signin"  />} />
+                <Route path="/profile" element={currentUser ? <Profile /> : <Navigate to="/signin" />} />
+                {/* sign in route */}
+                <Route path="/signin" element={<SignIn />} />
+
 
                 {/* HOME PAGE */}
                 <Route path="/" element={(
