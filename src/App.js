@@ -10,7 +10,21 @@ import Calendar from './calendar';
 import Form from './form';
 import Profile from './profile';
 
-const Placeholder = () => null;
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from './Config';
+import { getAnalytics } from "firebase/analytics";
+import {
+    getAuth,
+    onAuthStateChanged,
+    signOut
+  } from 'firebase/auth';
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase();
+const analytics = getAnalytics(app);
 
 function App() {
     const firstFourEvents = eventsData.slice(0, 4);
