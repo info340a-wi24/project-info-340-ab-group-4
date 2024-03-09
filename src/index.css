@@ -307,7 +307,7 @@ main {
 /* event image, name, theater */
 /* Salley */
 .event-card {
-    text-align: center;
+    text-align: left;
     margin-top: 1em;
     margin-right: 1em;
     background-color: #66736C;
@@ -328,7 +328,6 @@ main {
 .name-theater-section h2 {
     font-size: 4em;
     margin-top: 0.1em;
-    text-align: left;
 }
 
 .name-theater-section h3 {
@@ -336,14 +335,19 @@ main {
     color: #CFB034;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    text-align: left;
 }
 
 .name-theater-section h4 {
     font-size: 1.5em;
     color: white;
     margin-bottom: 1em;
-    text-align: left;
+}
+
+.event-card .save-button {
+    background-color: #B6433E;
+    margin-top: 1em;
+    font-size: 1.2em;
+    color: white;
 }
 
 /* schedule section */

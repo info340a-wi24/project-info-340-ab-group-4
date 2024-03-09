@@ -28,13 +28,12 @@ function Profile() {
     })
   }, []);
 
-  // Handlers for changing state
+  // changing username and password
   const handleUsernameChange = (event) => setUsername(event.target.value);
-  // const handleEmailChange = (event) => setEmail(event.target.value);
   const handlePasswordChange = (event) => setPassword(event.target.value);
+  // const handleEmailChange = (event) => setEmail(event.target.value);
 
-
-  // Handle form submission
+  // submitting changes to username and password
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -61,7 +60,7 @@ function Profile() {
   return (
     <main>
       <div className="profile-container">
-        {/* change so it actually says right username */}
+        {/* TO DO: Change so it actually says right username */}
         <h1>Welcome back, {username || 'User'}</h1>
         <div className="account-settings">
           <h2>Account Settings</h2>
@@ -84,6 +83,7 @@ function Profile() {
             </div>
           </form>
         </div>
+        
         {/* renders saved events list */}
         <div className='saved-events'>
           <h2>Saved Events</h2>

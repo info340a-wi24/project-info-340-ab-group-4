@@ -13,10 +13,18 @@ function EventCard({ eventName, venue, startDate, endDate, address, description,
                 eventName, venue, startDate, endDate, address, description, link, image, alt, reviewOne, reviewTwo
             };
             push(ref(saved, `saved-events/${currentUser.uid}`), eventItem)
-                .then(() => console.log('event saved'))
+                .then(() => {
+                    console.log('event saved');
+                    // setSave(true);
+                })
                 .catch((error) => console.log('error saving event: ', error));
         }
     };
+
+    // const handleSaveClick = () => {
+    //     setLoading(true);
+    //     saveEvent();
+    // }
 
     const handleClick = () => {
         setLoading(true);
@@ -30,13 +38,6 @@ function EventCard({ eventName, venue, startDate, endDate, address, description,
     return (
         <main>
         <div className="event-card-container">
-            {/* save button only will be rendered for users signed in */}
-            {currentUser && (
-                <button onClick={handleClick} disabled={loading || save}>
-                    {loading ? 'Saving...' : save ? 'Saved!' : 'Save'}
-                </button>
-            )}
-
             <div className="event-schedule-container">
                 <div className="event-card">
                     <div className="img-section">
@@ -47,6 +48,12 @@ function EventCard({ eventName, venue, startDate, endDate, address, description,
                         <h3>{venue}</h3>
                         <h4>{address}</h4>
                     </div>
+                    {/* save button only will be rendered for users signed in */}
+                    {currentUser && (
+                        <button className="save-button" onClick={handleClick} disabled={loading || save}>
+                            {loading ? 'Saving...' : save ? 'Saved!' : 'Save'}
+                        </button>
+                    )}
                 </div>
                 <div className="schedule">
                     {/* FOR NEXT DRAFT: create schedule array so unique schedules are on display for each event */}
