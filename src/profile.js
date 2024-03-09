@@ -45,10 +45,10 @@ function Profile() {
       await updateProfile(auth.currentUser, { displayName: username });
       await updatePassword(auth.currentUser, password);
       console.log('Profile Updated', { username, password });
-      alert('Changes saved successfully.');
+      alert('Changes saved successfully!');
 
     } catch (error) {
-      console.error('Error updating profile:', error);
+      console.error('Error updating profile: ', error);
       alert('Failed to save changes. Please try again.');
     }
   };
