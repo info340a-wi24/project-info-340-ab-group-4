@@ -170,15 +170,49 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 30em; 
 }
 
 .sign-in-box {
-    width: 25em;
+    width: 30em;
     padding: 5em;
     border: .2em solid white;
     border-radius: 0.5em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sign-in-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-in-box label {
+    margin-bottom: 0.5em;
+    color: white; 
+    font-weight: bold;
+}
+
+.sign-in-box input {
+    margin-top: 1em;
+    margin-left: 1.5em;
+    padding: 1em;
+    border: 0.1em solid #ccc;
+    border-radius: 0.5em;
+}
+
+.sign-in-box button {
+    padding: 0.5em 1.5em;
+    margin-top: 2em;
+    border-radius: 1em;
+    cursor: pointer;
+    background-color: #CFB034;
+}
+
+.sign-in-box button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 /* EVENT PAGE */

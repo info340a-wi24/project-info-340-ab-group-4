@@ -10,6 +10,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -20,6 +21,7 @@ function SignIn() {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const navigateTo = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -28,12 +30,13 @@ function SignIn() {
         setEmail('');
         setPassword('');
         setErrorMessage('');
+        navigateTo('/profile');
       } else {
         setUser(null);
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [navigateTo]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -84,55 +87,56 @@ function SignIn() {
   return (
     <div className="sign-in-container">
         <div className="sign-in-box">
+            <h1>Create an Account or Sign-In</h1>
             <FormGroup>
-                <Label for="email">Email</Label>
+                <Label for="email">Email:</Label>
                 <Input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Email"
-                valid={isValidEmail(email)}
-                invalid={!isValidEmail(email)}
-                value={email}
-                onChange={handleChange}
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  valid={isValidEmail(email)}
+                  invalid={!isValidEmail(email)}
+                  value={email}
+                  onChange={handleChange}
                 />
             </FormGroup>
 
             <FormGroup>
-                <Label for="password">Password</Label>
+                <Label for="password">Password:</Label>
                 <Input
-                id="password"
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={password}
-                onChange={handleChange}
+                  id="password"
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={handleChange}
                 />
             </FormGroup>
 
             <FormGroup>
-                <Label for="username">Username</Label>
+                <Label for="username">Username:</Label>
                 <Input
-                id="username"
-                name="username"
-                placeholder="Username"
-                value={username}
-                onChange={handleChange}
+                  id="username"
+                  name="username"
+                  placeholder="Username"
+                  value={username}
+                  onChange={handleChange}
                 />
             </FormGroup>
 
             <FormGroup>
                 <Button color="primary" onClick={handleSignUp} disabled={isReadytoSubmit || username === ''}>
-                Sign Up
+                  Sign Up
                 </Button>
                 {' '}
                 <Button color="success" onClick={handleSignIn} disabled={isReadytoSubmit || username !== ''}>
-                Sign In
+                  Sign In
                 </Button>
-                {' '}
-                <Button color="danger" onClick={handleSignOut} disabled={user === null}>
-                Sign Out
-                </Button>
+                {/* {' '} */}
+                {/* <Button color="danger" onClick={handleSignOut} disabled={user === null}>
+                  Sign Out
+                </Button> */}
             </FormGroup>
             
             {errorDiv}
