@@ -7,8 +7,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
-  onAuthStateChanged,
-  signOut,
+  onAuthStateChanged
+  // signOut,
 } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -60,20 +60,22 @@ function SignIn() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-      setErrorMessage(error.message);
+      let errorMessage = 'An error occurred while signing in.';
+
+      setErrorMessage(errorMessage);
     }
   };
 
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-      setEmail('');
-      setPassword('');
-      setUsername('');
-    } catch (error) {
-      setErrorMessage(error.message);
-    }
-  };
+  // const handleSignOut = async () => {
+  //   try {
+  //     await signOut(auth);
+  //     setEmail('');
+  //     setPassword('');
+  //     setUsername('');
+  //   } catch (error) {
+  //     setErrorMessage(error.message);
+  //   }
+  // };
 
   const errorDiv = errorMessage === '' ? '' : <Alert color="danger">Error: {errorMessage}</Alert>;
 
@@ -100,6 +102,7 @@ function SignIn() {
                   value={email}
                   onChange={handleChange}
                 />
+                {!isValidEmail(email) && email !== '' && <div className="invalid-feedback">Please enter a valid email.</div>}
             </FormGroup>
 
             <FormGroup>
