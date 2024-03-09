@@ -14,7 +14,7 @@ function Profile() {
   const [password, setPassword] = useState('');
   const [savedEvents, setSavedEvents] = useState([]);
 
-  // fetch saved events data from firebase db called saved
+  // fetch saved events data from firebase db called saved-events
   useEffect(() => {
     const savedEventsRef = ref(saved, `saved-events/${auth.currentUser.uid}`);
     onValue(savedEventsRef, (snapshot) => {
@@ -83,7 +83,7 @@ function Profile() {
             </div>
           </form>
         </div>
-        
+
         {/* renders saved events list */}
         <div className='saved-events'>
           <h2>Saved Events</h2>
