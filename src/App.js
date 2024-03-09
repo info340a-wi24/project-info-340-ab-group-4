@@ -12,12 +12,9 @@ import Profile from './profile';
 import SignIn from './sign-in-page';
 
 import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { firebaseConfig } from './Config';
-import {
-    getAuth,
-    onAuthStateChanged,
-    signOut
-  } from 'firebase/auth';
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -58,6 +55,7 @@ function App() {
     };
 
     return (
+        
         <BrowserRouter>
             <Header />
             <Routes>
@@ -91,6 +89,7 @@ function App() {
                     </div>
 
                 )} />
+                
 
                 {/* <Route path="/submission" element={<Form />} />
                 <Route path="/profile" element={<Profile />} /> */}
@@ -101,6 +100,8 @@ function App() {
                 <Route path="/profile" element={currentUser ? <Profile /> : <Navigate to="/signin" />} />
                 {/* sign in route */}
                 <Route path="/signin" element={<SignIn />} />
+                <Route path="/" element={<HomePage events={eventsData} />} />
+
 
 
                 {/* HOME PAGE */}
@@ -119,12 +120,13 @@ function App() {
                 )} />
                 {/* EVENT CARDS */}
                 {eventsData.map((event, index) => (
-                    <Route key={index} path={`/events/${index}`} element={<EventCard {...event} />} />
-                ))}
+                    <Route key={index} path={`/events/${index}`} element={<EventCard event={event} />} />
+                    ))}
             </Routes>
             <Footer />
         </BrowserRouter>
     );
+
 }
 
 export default App;
