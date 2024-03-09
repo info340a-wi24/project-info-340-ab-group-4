@@ -10,15 +10,15 @@ import Calendar from './calendar';
 import Form from './form';
 import Profile from './profile';
 import SignIn from './sign-in-page';
-
 import { initializeApp } from "firebase/app";
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { firebaseConfig } from './Config';
+import { getDatabase } from 'firebase/database';
 
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-// const db = getDatabase();
+const saved = getDatabase(app);
 
 function App() {
     const firstFourEvents = eventsData.slice(0, 4);
@@ -33,15 +33,6 @@ function App() {
         });
         return unsubscribe;
     }, []);
-
-    const handleSignOut = async() => {
-        try {
-            await signOut(auth);
-            setCurrentUser(null);
-        } catch (error) {
-            console.error('Error signing out:', error);
-        }
-    };
 
     // event listener for search bar
     const handleSearch = () => {
@@ -89,7 +80,6 @@ function App() {
                     </div>
 
                 )} />
-                
 
                 {/* <Route path="/submission" element={<Form />} />
                 <Route path="/profile" element={<Profile />} /> */}
@@ -97,14 +87,13 @@ function App() {
                 {/* CALENDAR */}
                 <Route path="/calendar" element={currentUser ? <Calendar /> : <Navigate to="/signin"  />} />
                 <Route path="/submission" element={currentUser ? <Form /> : <Navigate to="/signin"  />} />
+                {/* eventId={index} */}
                 <Route path="/profile" element={currentUser ? <Profile /> : <Navigate to="/signin" />} />
                 {/* sign in route */}
                 <Route path="/signin" element={<SignIn />} />
-                <Route path="/" element={<HomePage events={eventsData} />} />
-
-
 
                 {/* HOME PAGE */}
+                <Route path="/" element={<HomePage events={eventsData} />} />
                 <Route path="/" element={(
                     <main className="card-container">
                         {firstFourEvents.map((item, index) => (
@@ -118,11 +107,12 @@ function App() {
                         ))}
                     </main>
                 )} />
+
                 {/* EVENT CARDS */}
                 {eventsData.map((event, index) => (
                     // <Route key={index} path={`/events/${index}`} element={<EventCard event={event} />} />
                     // ))}
-                    <Route key={index} path={`/events/${index}`} element={<EventCard {...event} />} />
+                    <Route key={index} path={`/events/${index}`} element={<EventCard {...event} currentUser={currentUser} saved={saved}/>} />
                 ))}
             </Routes>
             <Footer />

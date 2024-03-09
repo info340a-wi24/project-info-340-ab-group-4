@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { signOut, getAuth, updateProfile, updatePassword } from 'firebase/auth';
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Config';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { Link } from 'react-router-dom';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-
+const saved = getDatabase(app);
+// {eventId}
 function Profile() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [savedEvents, setSavedEvents] = useState([]);
+
+  // fetch saved events data from firebase db called saved
+  useEffect(() => {
+    const savedEventsRef = ref(saved, `saved-events/${auth.currentUser.uid}`);
+    onValue(savedEventsRef, (snapshot) => {
+      const data = snapshot.val();
+      if(data) {
+        const savedEventsList = Object.values(data);
+        setSavedEvents(savedEventsList);
+      } else {
+        setSavedEvents([]);
+      }
+    })
+  }, []);
 
   // Handlers for changing state
   const handleUsernameChange = (event) => setUsername(event.target.value);
@@ -65,6 +83,23 @@ function Profile() {
               <button type="button" onClick={handleSignOut}>Sign Out</button>
             </div>
           </form>
+        </div>
+        {/* renders saved events list */}
+        <div className='saved-events'>
+          <h2>Saved Events</h2>
+          <ul>
+            {savedEvents.map((event, index) => (
+              <li key={index}>
+                {event.eventName}
+                {/* <img src={event.image} alt={event.alt} />
+                <div className="card-content">
+                  <h3>{event.eventName}</h3>
+                  <p>{event.condensedDescription}</p>
+                  <Link to={`/events/${event.eventId}`} className="btn" alt={`Link to ${event.eventName} event page`}>Event Details</Link>
+                </div> */}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </main>

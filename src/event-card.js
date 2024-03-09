@@ -1,19 +1,42 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { push, ref } from 'firebase/database'; 
 
-function EventCard({ eventName, venue, startDate, endDate, address, description, link, image, alt, reviewOne, reviewTwo }) {
+function EventCard({ eventName, venue, startDate, endDate, address, description, link, image, alt, reviewOne, reviewTwo, currentUser, saved }) {
     const [loading, setLoading] = useState(false);
+    const [save, setSave] = useState(false);
+
+    // saves event to firebase
+    const saveEvent = () => {
+        if (currentUser) {
+            const eventItem = {
+                eventName, venue, startDate, endDate, address, description, link, image, alt, reviewOne, reviewTwo
+            };
+            push(ref(saved, `saved-events/${currentUser.uid}`), eventItem)
+                .then(() => console.log('event saved'))
+                .catch((error) => console.log('error saving event: ', error));
+        }
+    };
 
     const handleClick = () => {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 1000); // delay by 1 second
+            setSave(true);
+            saveEvent();
+        }, 1000); // delay redirection by 1 second...
     }
 
     return (
         <main>
         <div className="event-card-container">
+            {/* save button only will be rendered for users signed in */}
+            {currentUser && (
+                <button onClick={handleClick} disabled={loading || save}>
+                    {loading ? 'Saving...' : save ? 'Saved!' : 'Save'}
+                </button>
+            )}
+
             <div className="event-schedule-container">
                 <div className="event-card">
                     <div className="img-section">
