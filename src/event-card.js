@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { push, ref } from 'firebase/database'; 
+// import eventsData from './events-data.json';
 
-function EventCard({ eventName, venue, startDate, endDate, address, description, link, image, alt, reviewOne, reviewTwo, currentUser, saved }) {
+function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, reviewOne, reviewTwo, currentUser, saved }) {
     const [loading, setLoading] = useState(false);
     const [save, setSave] = useState(false);
+
+    // // generate eventId
+    // const generateEventId = () => {
+    //     return Math.random().toString(36).substr(2, 9);
+    // }
 
     // saves event to firebase
     const saveEvent = () => {
         if (currentUser) {
             const eventItem = {
-                eventName, venue, startDate, endDate, address, description, link, image, alt, reviewOne, reviewTwo
+                // eventId: generateEventId(),
+                eventId, eventName, venue, start, endDate, address, description, link, image, alt, reviewOne, reviewTwo
             };
             push(ref(saved, `saved-events/${currentUser.uid}`), eventItem)
                 .then(() => {
@@ -28,12 +35,19 @@ function EventCard({ eventName, venue, startDate, endDate, address, description,
 
     const handleClick = () => {
         setLoading(true);
-        setTimeout(() => {
+        // check if event is already saved
+        const isEventAlreadySaved = saved.some((savedEvent) => savedEvent.eventId === eventId);
+        if (isEventAlreadySaved) {
+            alert('Event is already saved.');
             setLoading(false);
-            setSave(true);
-            saveEvent();
-        }, 1000); // delay redirection by 1 second...
-    }
+        } else {
+            setTimeout(() => {
+                setLoading(false);
+                setSave(true);
+                saveEvent();
+            }, 1000);
+        }
+    };
 
     return (
         <main>
@@ -58,7 +72,7 @@ function EventCard({ eventName, venue, startDate, endDate, address, description,
                 <div className="schedule">
                     {/* FOR NEXT DRAFT: create schedule array so unique schedules are on display for each event */}
                     <h2>Dates & Times</h2>
-                    <h3>{startDate} to {endDate}</h3>
+                    <h3>{start} to {endDate}</h3>
                     <div className="date-time">
                         <h4>Jan 3</h4>
                         <ul>

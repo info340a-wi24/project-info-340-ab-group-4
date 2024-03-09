@@ -1,5 +1,6 @@
 [
     {
+        "eventId": "1",
         "eventName": "Quixote Nuevo",
         "directorOrganizer": "Lisa Portes",
         "type": "Play",
@@ -18,6 +19,7 @@
         "reviewTwo": "Quixote Nuevo commands the stage, reminding audiences what it means to be epic…Go see the play for yourself! - DRAMA IN THE HOOD"
     },
     {
+        "eventId": "2",
         "eventName": "Sanctuary City",
         "directorOrganizer": "Desdemona Chiang",
         "type": "Play",
@@ -36,6 +38,7 @@
         "reviewTwo": "Teens may appreciate a play that revolves around other young people, but moments of teenage levity are few. - ANONYMOUS"
     },
     {
+        "eventId": "3",
         "eventName": "Luchadora!",
         "directorOrganizer": "Johamy Morales",
         "type": "Play",
@@ -54,6 +57,7 @@
         "reviewTwo": "Our daughters left the theater on Saturday feeling happy and inspired and asked to come see it again. I would recommend it to anyone!! - TANYA V."
     },
     {
+        "eventId": "4",
         "eventName": "Misfit Cabaret presents \"Grimm\"",
         "directorOrganizer": "Kat Robicharud",
         "type": "Cabaret",
@@ -72,6 +76,7 @@
         "reviewTwo": "Misfit Cabaret is exciting and fun simply because you never know what you’ll get. The shows are a compilation of acts, stories, and songs, all emceed by Robichaud. - SPLASH MAGAZINES"
     },
     {
+        "eventId": "5",
         "eventName": "Neumos 20th Anniversary Party",
         "directorOrganizer": "Neumos",
         "type": "Concert",
@@ -90,6 +95,7 @@
         "reviewTwo": "I think this venue is good size for concert or event and yet feel it intimate. - ANA M."
     },
     {
+        "eventId": "6",
         "eventName": "Becoming Dr. Ruth",
         "directorOrganizer": "Holly Twyford",
         "type": "Play",
@@ -108,6 +114,7 @@
         "reviewTwo": "The \"whole of Dr. Ruth’s life seemed to hover, a silently turning magnet still resonating in the heart.\" - DRAMA IN THE HOOD"
     },
     {
+        "eventId": "7",
         "eventName": "Duo Comedy Showcase",
         "directorOrganizer": "Unexpected Productions",
         "size": "small",
@@ -126,6 +133,7 @@
         "reviewTwo": "What a fabtastic show! We loved the actors and the energy they gave to the crowd! Host nailed it and wonderfully engaged with the audience. - ERIKA J."
     },
     {
+        "eventId": "8",
         "eventName": "Memoirs of a Forgotten Man",
         "directorOrganizer": "Terry Edward Moore",
         "type": "Play",
@@ -144,6 +152,7 @@
         "reviewTwo": "An outstanding cast that compliments each other through each scene, character change, and memory test. - BROADWAY WORLD"
     },
     {
+        "eventId": "9",
         "eventName": "Something's Afoot",
         "directorOrganizer": "Bill Berry",
         "type": "Musical",
@@ -162,6 +171,7 @@
         "reviewTwo": "The critics were wrong...this show was great! What a wonderful, fun night out. Excellent cast, entertaining dialogue, wonderful songs. - CAT C."
     },
     {
+        "eventId": "10",
         "eventName": "Cornish Dance Capstone Concert",
         "directorOrganizer": "Cornish College of the Arts",
         "type": "Dance",
@@ -180,6 +190,7 @@
         "reviewTwo": "This school; the teachers, the students, the assignments, they really make you break away from your comfort zone and go past the boundaries that you have built up for yourself. - ELIZABETH"
     },
     {
+        "eventId": "11",
         "eventName": "Shakespeare in Love",
         "directorOrganizer": "Declan Donnellan",
         "type": "Play",
@@ -198,6 +209,7 @@
         "reviewTwo": "Watched the stage production of Shakespeare In Love. For a guy who hates English literature and William Shakespeare, I was pleasantly surprised how much I enjoyed this play. - SHOWS I'VE SEEN"
     },
     {
+        "eventId": "12",
         "eventName": "Loosegroove Records Presents: Brittany Davis, Zoser, Mason Jennings, and Jonny Polonsky",
         "directorOrganizer": "Loosegrove Records",
         "type": "Concert",
@@ -216,6 +228,7 @@
         "reviewTwo": "Brittany Davis is “just a phenomenal musician and a charming and energizing human being...They can fit in on any song and find a spot and be so powerful. - OM JOHARI"
     },
     {
+        "eventId": "13",
         "eventName": "The Moors",
         "directorOrganizer": "Annie Lareau",
         "type": "Play",
@@ -234,6 +247,7 @@
         "reviewTwo": "this is what I love about Mildred’s Umbrella—they keep trying new, edgy things, with superlative actors. They aren’t afraid of the wildness of the moors. - HOUSTONIA"
     },
     {
+        "eventId": "14",
         "eventName": "Fat Ham",
         "directorOrganizer": "Timothy McCuen Piggee",
         "type": "Play",
@@ -252,6 +266,7 @@
         "reviewTwo": "By turns sweet and saucy (and very funny), the play stays just close enough to Hamlet to keep us off-balance. - DEADLINE"
     },
     {
+        "eventId": "15",
         "eventName": "Unstoppable: A Queer Dancical",
         "directorOrganizer": "Zheng Wang",
         "type": "Dance",

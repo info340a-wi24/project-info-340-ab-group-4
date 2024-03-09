@@ -238,6 +238,7 @@ main {
     overflow: hidden;
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0);
     margin: 2.6em;
+    display: inline-block;
 }
 
 .event-page-card img {
@@ -293,6 +294,7 @@ main {
     margin-top: 6em;
     padding: 1em;
     flex: 1 100%;
+    border-radius: 1em;
 }
 
 /* EVENT AND SCHEDULE */
@@ -509,21 +511,6 @@ main {
 
 /* PROFILE PAGE */
 /* Salley */
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.profile-container h1 {
-    font-size: 2.5em;
-    color: white;
-    margin-top: .5em;
-    margin-bottom: .5em;
-}
-
 .account-settings {
     background-color: lightgray;
     border-radius: 1em;
@@ -573,6 +560,44 @@ main {
     cursor: pointer;
     background-color: #CFB034;
     font-size: 0.85em;
+}
+
+/* saved events section of profile */
+/* salley */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.profile-container h1 {
+    font-size: 2.5em;
+    color: white;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.profile-page-card {
+    width: 22em;
+    margin: 2.5em; 
+    background-color: #ffffff;
+    border-radius: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+  }
+  
+.profile-page-card img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.saved-events h2 {
+    font-size: 2.5em;
+    color: white;
 }
 
 #calendar h1 {

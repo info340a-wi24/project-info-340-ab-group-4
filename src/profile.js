@@ -4,6 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Config';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { Link } from 'react-router-dom';
+// import eventsData from './events-data.json';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -21,6 +22,10 @@ function Profile() {
       const data = snapshot.val();
       if(data) {
         const savedEventsList = Object.values(data);
+        // const savedEventsList = Object.entries(data).map(([eventId, eventData]) => ({
+        //   eventId, // Include eventId in the event data
+        //   ...eventData,
+        // }));
         setSavedEvents(savedEventsList);
       } else {
         setSavedEvents([]);
@@ -85,18 +90,19 @@ function Profile() {
         </div>
 
         {/* renders saved events list */}
-        <div className='saved-events'>
+        <div className="saved-events">
           <h2>Saved Events</h2>
-          <ul>
+          <ul className="event-list">
             {savedEvents.map((event, index) => (
-              <li key={index}>
-                {event.eventName}
-                {/* <img src={event.image} alt={event.alt} />
+              <li key={index} className="profile-page-card">
+                {/* <div className="event-page-card"> */}
+                <img src={event.image} alt={event.alt} />
                 <div className="card-content">
                   <h3>{event.eventName}</h3>
-                  <p>{event.condensedDescription}</p>
+                  {/* <p>{event.condensedDescription}</p> */}
                   <Link to={`/events/${event.eventId}`} className="btn" alt={`Link to ${event.eventName} event page`}>Event Details</Link>
-                </div> */}
+                </div>
+                {/* </div> */}
               </li>
             ))}
           </ul>

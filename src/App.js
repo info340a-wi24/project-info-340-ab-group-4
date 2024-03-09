@@ -69,7 +69,7 @@ function App() {
                             {filteredEvents.map((event, index) => (
                                 <EventPage
                                     key={index}
-                                    eventId={index} 
+                                    eventId={event.eventId} 
                                     image={event.image}
                                     alt={event.alt}
                                     eventName={event.eventName}
@@ -99,7 +99,7 @@ function App() {
                         {firstFourEvents.map((item, index) => (
                             <HomePage
                                 key={index}
-                                eventId={index} 
+                                eventId={item.eventId} 
                                 image={item.image}
                                 alt={item.alt}
                                 eventName={item.eventName}
@@ -112,7 +112,7 @@ function App() {
                 {eventsData.map((event, index) => (
                     // <Route key={index} path={`/events/${index}`} element={<EventCard event={event} />} />
                     // ))}
-                    <Route key={index} path={`/events/${index}`} element={<EventCard {...event} currentUser={currentUser} saved={saved}/>} />
+                    <Route key={index} path={`/events/${event.eventId}`} element={<EventCard {...event} currentUser={currentUser} saved={saved}/>} />
                 ))}
             </Routes>
             <Footer />
