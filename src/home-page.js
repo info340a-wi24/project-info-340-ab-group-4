@@ -13,9 +13,9 @@ function HomePage({ image, alt, eventName, condensedDescription, eventId }) {
     };
 
     return (
-        <Carousel autoPlay infiniteLoop showThumbs={false}>
+        <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false} useKeyboardArrows className="presentation-mode">
             {events.map((event, index) => (
-                <div key={index} className="card">
+                <div key={index} className="carousel-slide">
                     <img src={event.image} alt={event.alt} />
                     <div className="legend">
                         <h3>{event.eventName}</h3>
