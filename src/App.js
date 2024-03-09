@@ -120,8 +120,10 @@ function App() {
                 )} />
                 {/* EVENT CARDS */}
                 {eventsData.map((event, index) => (
-                    <Route key={index} path={`/events/${index}`} element={<EventCard event={event} />} />
-                    ))}
+                    // <Route key={index} path={`/events/${index}`} element={<EventCard event={event} />} />
+                    // ))}
+                    <Route key={index} path={`/events/${index}`} element={<EventCard {...event} />} />
+                ))}
             </Routes>
             <Footer />
         </BrowserRouter>
