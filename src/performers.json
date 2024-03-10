@@ -1,0 +1,378 @@
+[
+    {
+      "eventId": "quixote-nuevo",
+      "performers": [
+        {
+          "name": "Raúl Cardona",
+          "role": "Papa Calaca/Cardenio",
+          "image": "../public/img/cardenio.jpg"
+        },
+        {
+          "name": "Sol Castillo",
+          "role": "Padre Perez",
+          "image": "../public/img/sol.jpg"
+        },
+        {
+            "name": "Alicia Coca",
+            "role": "Rosario/Juana",
+            "image": "../public/img/coca.jpg"
+        },
+        {
+            "name": "Laura Crotte",
+            "role": "Magdalena/Perla",
+            "image": "../public/img/laura.jpg"
+        },
+        {
+            "name": "Viviana Garza",
+            "role": "Antonia/Inez",
+            "image": "../public/img/inez.jpg"
+        },
+        {
+            "name": "Ernie González, Jr.",
+            "role": "Manny/Sancho Panza",
+            "image": "../public/img/panza.jpg"
+        },
+        {
+              "name": "Maya Malan-Gonzalez",
+              "role": "Dr. Campos/Dulcinea",
+              "image": "../public/img/maya.jpg"
+        },
+        {
+              "name": "Herbert Siguenza",
+              "role": "Quijano/Quixote",
+              "image": "../public/img/herbert.jpg"
+        },
+        {
+              "name": "Lakin Valdez",
+              "role": "Bruno/Young Quijano",
+              "image": "../public/img/bruno.jpg"
+        },
+        {
+            "name": "Tony Sancho",
+            "role": "u/s Quijano/Quixote",
+            "image": "../public/img/tony.jpg"
+        }
+        
+      ]
+    },
+    {
+      "eventId": "sanctuary-city",
+      "performers": [
+        {
+          "name": "Emilie Maureen Hanson",
+          "role": "G",
+          "image": "../public/img/G1.jpg"
+        },
+        {
+          "name": "Junior Nyong’o",
+          "role": "B",
+          "image": "/path/to/B.jpg"
+        },
+        {
+            "name": "Josh Kenji",
+            "role": "Henry",
+            "image": "../public/img/G1.jpg"
+        },
+        {
+            "name": "Lola Rei Fukushima",
+            "role": "u/s G",
+            "image": "../public/img/lola.jpg"
+        },
+        {
+            "name": "Morgan Gwilym Tso",
+            "role": "u/s B, Henry",
+            "image": "../public/img/tso.jpg"
+        }
+
+      ]
+    },
+    {
+        "eventId": "Luchadora!",
+        "performers": [
+          {
+            "name": "Ana María Campoy",
+            "role": "Mask Maker",
+            "image": "../public/img/Ana.png"
+          },
+          {
+            "name": "Adria LaMorticella",
+            "role": "Liesl/Hannah/Fight Captain",
+            "image": "../public/img/adria.png"
+          },
+          {
+            "name": "Jordi Montes",
+            "role": "Nana Lupita",
+            "image": "../public/img/nana.png"
+          },
+          {
+            "name": "Beth Pollack",
+            "role": "Vanessa/Lupita",
+            "image": "../public/img/beth.png"
+          },
+          {
+            "name": "Carter Rodriquez",
+            "role": "Father",
+            "image": "../public/img/father.png"
+          },
+          {
+            "name": "James Schilling",
+            "role": "Leopold",
+            "image": "../public/img/james.png"
+          },
+          {
+            "name": "Christian Zumbado",
+            "role": "El Hijo",
+            "image": "../public/img/el.png"
+          }
+        ]
+      },
+      {
+        "eventId": "Misfit Cabaret presents \"Grimm\"",
+        "performers": [
+          {
+            "name": "Kat Robichaud",
+            "role": "Creator",
+            "image": "../public/img/mis.png"
+          },
+          {
+            "name": "Jordan Nathan",
+            "role": "Creator",
+            "image": "../public/img/mis.png"
+          }
+        ]
+      },
+      {
+        "eventId": "Neumos 20th Anniversary Party",
+        "performers": [
+          {
+            "name": "SPIRIT AWARD",
+            "role": "Artist",
+            "image": "../public/img/dj.png"
+          }
+        ]
+      },
+      {
+        "eventId": "Becoming Dr. Ruth",
+        "performers": [
+          {
+            "name": "NAOMI JACOBSON",
+            "role": "Dr. Ruth K. Westheimer",
+            "image": "../public/img/ruth1.png"
+          },
+          {
+            "name": "MARI NELSON",
+            "role": "Dr. Ruth K. Westheimer U/S",
+            "image": "../public/img/ruth2.png"
+          }
+        ]
+      },
+      {
+        "eventId": "Duo Comedy Showcase",
+        "performers": [
+          {
+            "name": "Penn & Teller, Martin & Lewis, Bevis and Butthead",
+            "role": "Duo",
+            "image": "../public/img/duo.png"
+          }
+        ]
+      },
+      {
+        "eventId": "Memoirs of a Forgotten Man",
+        "performers": [
+          {
+            "name": "Sunam Ellis",
+            "role": "Alexei",
+            "image": "../public/img/man.png"
+          }
+        ]
+      },
+      {
+        "eventId": "Something's Afoot",
+        "performers": [
+          {
+            "name": "Anne Allgood",
+            "role": "Lady Grace Manley-Prowe",
+            "image": "../public/img/anne.png"
+          },
+          {
+            "name": "Allen Fitzpatric",
+            "role": "Colonel Gillweather",
+            "image": "../public/img/allen.png"
+          },
+          {
+            "name": "Brandon O'Neill",
+            "role": "Flint",
+            "image": "../public/img/flint.png"
+          },
+          {
+            "name": "Harter Clingman",
+            "role": "u/s Clive/Flint/Dr. Grayburn",
+            "image": "../public/img/harter.png"
+          },
+          {
+            "name": "Ashley Lanyon",
+            "role": "Hope Langdon",
+            "image": "../public/img/hope.png"
+          },
+          {
+            "name": "Cassi Q Kohl",
+            "role": "u/s Lettie/Lady Grace Manley-Prowe",
+            "image": "../public/img/cassi.png"
+          },
+          {
+            "name": "Bianca Raso",
+            "role": "u/s Hope Langdone",
+            "image": "../public/img/raso.png"
+          },
+          {
+            "name": "Jonathon Royse",
+            "role": "u/s Nigel Rancour/Geoffrey",
+            "image": "../public/img/royse.png"
+          },
+          {
+            "name": "Sarah Rudinoff",
+            "role": "Miss Tweed",
+            "image": "../public/img/tweed.png"
+          },
+          {
+            "name": "Yusef Seevers",
+            "role": "Dr. Grayburn",
+            "image": "../public/img/yusef.png"
+          },
+          {
+            "name": "Porscha Shaw",
+            "role": "Lettie",
+            "image": "../public/img/shaw.png"
+          },
+          {
+            "name": "Karen Skrinde",
+            "role": "u/s Miss Tweed",
+            "image": "../public/img/miss.png"
+          },
+          {
+            "name": "Jonathan Luke Stevens",
+            "role": "Geoffrey",
+            "image": "../public/img/luke.png"
+          },
+          {
+            "name": "Jason Weitkamp",
+            "role": "Clive, u/s Colonel Gillweather",
+            "image": "../public/img/jason.png"
+          }
+
+          
+        ]
+      },
+      {
+        "eventId": "Cornish Dance Capstone Concert",
+        "performers": [
+          {
+            "name": "Cornish Seniors",
+            "role": "Dancers",
+            "image": "../public/img/dance.png"
+          }
+        ]
+      },
+      {
+        "eventId": "Shakespeare in Love",
+        "performers": [
+          {
+            "name": "No Information",
+            "role": "William Shakespeare",
+            "image": "../public/img/love.png"
+          }
+          
+        ]
+      },
+      {
+        "eventId": "Loosegroove Records Presents: Brittany Davis, Zoser, Mason Jennings, and Jonny Polonsky",
+        "performers": [
+          {
+            "name": "Brittany Davis",
+            "role": "Role Description",
+            "image": "../public/img/davis.png"
+          }
+        ]
+      },
+      {
+        "eventId": "The Moors",
+        "performers": [
+          {
+            "name": "Lisa M. Viertel",
+            "role": "Agatha",
+            "image": "../public/img/lisa.png"
+          },
+          {
+            "name": "Megan Ahiers",
+            "role": "Huldey",
+            "image": "../public/img/megan.png"
+          },
+          {
+            "name": "Hazel Rose Gibson",
+            "role": "Emilie",
+            "image": "../public/img/rose.png"
+          },
+          {
+            "name": "Kiki Abba",
+            "role": "Marjory/Mallory",
+            "image": "../public/img/kiki.png"
+          },
+          {
+            "name": "Peter Dylon O'Connor",
+            "role": "Mastiff",
+            "image": "../public/img/peter.png"
+          },
+          {
+            "name": "Alyssa keene",
+            "role": "Moor-Hen",
+            "image": "../public/img/hen.png"
+          }
+        ]
+      },
+      {
+        "eventId": "Fat Ham",
+        "performers": [
+          {
+            "name": "Taj E. M. Burroughs",
+            "role": "Juicy",
+            "image": "../public/img/taj.png"
+          },
+          {
+            "name": "Aishé Keita",
+            "role": "Opal",
+            "image": "../public/img/opal.png"
+          },
+          {
+            "name": "Taj E. M. Burroughs",
+            "role": "Juicy",
+            "image": "../public/img/taj.png"
+          },
+          {
+            "name": "Semaj Miller",
+            "role": "Larry",
+            "image": "../public/img/larry.png"
+          },
+          {
+            "name": "Chip Sherman",
+            "role": "Tio",
+            "image": "../public/img/tio.png"
+          },
+          {
+            "name": "Dedra D. Woods",
+            "role": "Tedra",
+            "image": "../public/img/woods.png"
+          }
+        ]
+      },
+      {
+        "eventId": "Unstoppable: A Queer Dancical",
+        "performers": [
+          {
+            "name": "Alanah Pascual",
+            "role": "Role Description",
+            "image": "../public/img/queer.png"
+          }
+        ]
+      }
+  ]
+  
