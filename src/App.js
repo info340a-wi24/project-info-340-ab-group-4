@@ -10,6 +10,7 @@ import Calendar from './calendar';
 import Form from './form';
 import Profile from './profile';
 import SignIn from './sign-in-page';
+import ErrorPage from './error';
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { firebaseConfig } from './Config';
@@ -109,6 +110,7 @@ function App() {
                 {eventsData.map((event, index) => (
                     <Route key={index} path={`/events/${event.eventId}`} element={<EventCard {...event} currentUser={currentUser} saved={saved}/>} />
                 ))}
+                <Route path="*" element={<ErrorPage />} />
             </Routes>
             <Footer />
         </BrowserRouter>
