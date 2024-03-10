@@ -13,6 +13,18 @@ function Profile() {
   const [password, setPassword] = useState('');
   const [savedEvents, setSavedEvents] = useState([]);
 
+  // useEffect(() => {
+  //   const unsubscribe = auth.onAuthStateChanged(user => {
+  //     if (user) {
+  //       setUsername(user.displayName || '');
+  //     } else {
+  //       setUsername('');
+  //     }
+  //   });
+
+  //   return () => unsubscribe();
+  // }, []);
+
   // fetch saved events data from firebase db called saved-events
   useEffect(() => {
     const savedEventsRef = ref(saved, `saved-events/${auth.currentUser.uid}`);
@@ -59,7 +71,7 @@ function Profile() {
     <main>
       <div className="profile-container">
         {/* TO DO: Change so it actually says right username */}
-        <h1>Welcome back, {username || 'User'}</h1>
+        <h1>Welcome back, {auth.currentUser.displayName}</h1>
         <div className="account-settings">
           <h2>Account Settings</h2>
           <form onSubmit={handleSubmit}>
