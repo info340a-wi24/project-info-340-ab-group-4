@@ -4,12 +4,10 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Config';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { Link } from 'react-router-dom';
-// import eventsData from './events-data.json';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const saved = getDatabase(app);
-// {eventId}
 function Profile() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -22,10 +20,6 @@ function Profile() {
       const data = snapshot.val();
       if(data) {
         const savedEventsList = Object.values(data);
-        // const savedEventsList = Object.entries(data).map(([eventId, eventData]) => ({
-        //   eventId, // Include eventId in the event data
-        //   ...eventData,
-        // }));
         setSavedEvents(savedEventsList);
       } else {
         setSavedEvents([]);
@@ -36,7 +30,6 @@ function Profile() {
   // changing username and password
   const handleUsernameChange = (event) => setUsername(event.target.value);
   const handlePasswordChange = (event) => setPassword(event.target.value);
-  // const handleEmailChange = (event) => setEmail(event.target.value);
 
   // submitting changes to username and password
   const handleSubmit = async (event) => {
@@ -74,10 +67,6 @@ function Profile() {
               <label htmlFor="username">Username:</label>
               <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} /><br />
             </div>
-            {/* <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" value={email} onChange={handleEmailChange} /><br />
-            </div> */}
             <div className="form-group">
               <label htmlFor="name">Password:</label>
               <input type="text" id="password" name="password" value={password} onChange={handlePasswordChange} /><br />
@@ -95,14 +84,11 @@ function Profile() {
           <ul className="event-list">
             {savedEvents.map((event, index) => (
               <li key={index} className="profile-page-card">
-                {/* <div className="event-page-card"> */}
                 <img src={event.image} alt={event.alt} />
                 <div className="card-content">
                   <h3>{event.eventName}</h3>
-                  {/* <p>{event.condensedDescription}</p> */}
                   <Link to={`/events/${event.eventId}`} className="btn" alt={`Link to ${event.eventName} event page`}>Event Details</Link>
                 </div>
-                {/* </div> */}
               </li>
             ))}
           </ul>

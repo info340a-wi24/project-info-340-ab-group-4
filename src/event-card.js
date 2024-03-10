@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ref, push, get, query, orderByChild } from 'firebase/database';
-// import eventsData from './events-data.json';
 
 function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, reviewOne, reviewTwo, currentUser, saved }) {
     const [loading, setLoading] = useState(false);

@@ -8,7 +8,6 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
   onAuthStateChanged
-  // signOut,
 } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -65,17 +64,6 @@ function SignIn() {
       setErrorMessage(errorMessage);
     }
   };
-
-  // const handleSignOut = async () => {
-  //   try {
-  //     await signOut(auth);
-  //     setEmail('');
-  //     setPassword('');
-  //     setUsername('');
-  //   } catch (error) {
-  //     setErrorMessage(error.message);
-  //   }
-  // };
 
   const errorDiv = errorMessage === '' ? '' : <Alert color="danger">Error: {errorMessage}</Alert>;
 
@@ -136,10 +124,6 @@ function SignIn() {
                 <Button color="success" onClick={handleSignIn} disabled={isReadytoSubmit || username !== ''}>
                   Sign In
                 </Button>
-                {/* {' '} */}
-                {/* <Button color="danger" onClick={handleSignOut} disabled={user === null}>
-                  Sign Out
-                </Button> */}
             </FormGroup>
             
             {errorDiv}

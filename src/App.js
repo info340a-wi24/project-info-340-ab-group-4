@@ -81,13 +81,10 @@ function App() {
 
                 )} />
 
-                {/* <Route path="/submission" element={<Form />} />
-                <Route path="/profile" element={<Profile />} /> */}
                 {/* protected routes for submission and profile */}
                 {/* CALENDAR */}
                 <Route path="/calendar" element={currentUser ? <Calendar /> : <Navigate to="/signin"  />} />
                 <Route path="/submission" element={currentUser ? <Form /> : <Navigate to="/signin"  />} />
-                {/* eventId={index} */}
                 <Route path="/profile" element={currentUser ? <Profile /> : <Navigate to="/signin" />} />
                 {/* sign in route */}
                 <Route path="/signin" element={<SignIn />} />
@@ -110,8 +107,6 @@ function App() {
 
                 {/* EVENT CARDS */}
                 {eventsData.map((event, index) => (
-                    // <Route key={index} path={`/events/${index}`} element={<EventCard event={event} />} />
-                    // ))}
                     <Route key={index} path={`/events/${event.eventId}`} element={<EventCard {...event} currentUser={currentUser} saved={saved}/>} />
                 ))}
             </Routes>
