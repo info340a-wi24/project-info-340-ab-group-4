@@ -1,52 +1,64 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { push, ref } from 'firebase/database'; 
+import { ref, push, get, query, orderByChild } from 'firebase/database';
 // import eventsData from './events-data.json';
 
 function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, reviewOne, reviewTwo, currentUser, saved }) {
     const [loading, setLoading] = useState(false);
     const [save, setSave] = useState(false);
 
-    // // generate eventId
-    // const generateEventId = () => {
-    //     return Math.random().toString(36).substr(2, 9);
-    // }
-
     // saves event to firebase
     const saveEvent = () => {
         if (currentUser) {
             const eventItem = {
-                // eventId: generateEventId(),
                 eventId, eventName, venue, start, endDate, address, description, link, image, alt, reviewOne, reviewTwo
             };
             push(ref(saved, `saved-events/${currentUser.uid}`), eventItem)
                 .then(() => {
                     console.log('event saved');
-                    // setSave(true);
+                    setSave(true); 
                 })
-                .catch((error) => console.log('error saving event: ', error));
+                .catch((error) => console.log('error saving event: ', error))
+                .finally(() => setLoading(false));
         }
     };
 
-    // const handleSaveClick = () => {
-    //     setLoading(true);
-    //     saveEvent();
-    // }
-
     const handleClick = () => {
+        // is in loading state
         setLoading(true);
-        // check if event is already saved
-        const isEventAlreadySaved = saved.some((savedEvent) => savedEvent.eventId === eventId);
-        if (isEventAlreadySaved) {
-            alert('Event is already saved.');
-            setLoading(false);
-        } else {
-            setTimeout(() => {
+        // location in firebase db where user's saved events are stored
+        const savedEventsRef = ref(saved, `saved-events/${currentUser.uid}`);
+        // retrieves saved events for current user ordered by eventId key
+        const savedEventsQuery = query(savedEventsRef, orderByChild('eventId'));
+        
+        get(savedEventsQuery)
+            // snapshot contains data from database
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                const savedEvents = snapshot.val();
+                // check if current event already saved by comparing event id
+                // to ones of saved events
+                const isEventAlreadySaved = Object.values(savedEvents).some(event => event.eventId === eventId);
+                if (isEventAlreadySaved) {
+                    alert('Event is already saved.');
+                    setLoading(false);
+                } else {
+                    // adds delay (makes Saving... longer so users can see)
+                    setTimeout(() => {
+                        saveEvent();
+                    }, 1000); 
+                }
+                } else {
+                    setTimeout(() => {
+                        saveEvent();
+                    }, 1000); 
+                }
+            })
+            .catch((error) => {
+                console.error('Error checking saved events: ', error);
                 setLoading(false);
-                setSave(true);
-                saveEvent();
-            }, 1000);
-        }
+            }
+        );
     };
 
     return (
