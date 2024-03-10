@@ -8,6 +8,39 @@
         "cost": "high",
         "start": "2024-01-19",
         "endDate": "2024-02-11",
+        "sessions": [
+            {
+              "date": "2024-01-28",
+              "times": ["2:45 PM", "5:30 PM"]
+            },
+            {
+              "date": "2024-02-01",
+              "times": ["10:30 AM", "7:30 PM"]
+            },
+            {
+                "date": "2024-02-02",
+                "times": ["6:30 PM"]
+            },
+              {
+                "date": "2024-02-03",
+                "times": ["1:00 PM", "2:00 PM"]
+            },
+            {
+                "date": "2024-02-07",
+                "times": ["12:00 PM"]
+              },
+              {
+                "date": "2024-02-10",
+                "times": ["2:00 PM"]
+              },
+              {
+                "date": "2024-02-11",
+                "times": ["12:00 PM"]
+              }
+
+
+
+        ],
         "venue": "Bagley Wright Theater",
         "address": "155 Mercer St, Seattle, WA 98109",
         "description": "Aging Cervantes professor Jose Quijano isn’t going down without a fight. When his family tries to move him to an assisted living facility, Jose escapes on his valiant tricycle steed in search of his long-lost love. Reality and fantasy blur in the Texas desert, as Jose dubs himself Don Quixote and embarks on a fantastic, death-defying journey to discover the truth of his past. Underscored by vibrant Tejano music, Quixote Nuevo is a humorous and heartfelt quest towards becoming the hero of your own story.",
@@ -27,6 +60,71 @@
         "cost": "high",
         "start": "2024-03-01",
         "endDate": "2024-03-31",
+        "sessions": [
+            {
+              "date": "2024-03-10",
+              "times": ["12:00 PM", "5:30 PM"]
+            },
+            {
+              "date": "2024-03-13",
+              "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-03-14",
+                "times": ["7:30 PM"]
+            },
+              {
+                "date": "2024-03-15",
+                "times": ["7:30 PM"]
+            },
+              {
+                "date": "2024-03-16",
+                "times": ["2:00 PM", "7:30 PM"]
+              },
+              {
+                "date": "2024-03-17",
+                "times": ["12:00 PM", "5:30 PM"]
+              },
+              {
+                "date": "2024-03-20",
+                "times": ["2:00 PM"]
+              },
+              {
+                "date": "2024-03-21",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-03-22",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-03-24",
+                "times": ["12:00 PM", "5:30 PM"]
+              },
+              {
+                "date": "2024-03-27",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-03-28",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-03-29",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-03-30",
+                "times": ["2:00 PM", "7:30 PM"]
+              },
+              {
+                "date": "2024-03-31",
+                "times": ["12:00 PM", "5:30 PM"]
+              }
+
+
+
+        ],
         "venue": "Leo K. Theater",
         "address": "155 Mercer Street, Seattle, WA 98109",
         "description": "Winter, 2001, Newark, NJ. Two DREAMers—pre-DACA—meet up on the fire escape, which happens most nights. Both undocumented teens, they grapple with life’s challenges, from family to their futures. When one becomes naturalized, she promises to marry the other so he can receive his papers and truly start his life. As time passes and their relationship shifts, both must confront what they are willing to sacrifice to live freely and belong. This searing and captivating new play by Pulitzer Prize-winning Martyna Majok asks what we’re willing to risk for those we love.",
@@ -46,6 +144,23 @@
         "cost": "medium",
         "start": "2024-02-22",
         "endDate": "2024-03-17",
+        "sessions": [
+            {
+              "date": "2024-03-10",
+              "times": ["1:00 PM", "4:30 PM"]
+            },
+            {
+              "date": "2024-03-16",
+              "times": ["1:00 PM", "4:30 PM"]
+            },
+            {
+                "date": "2024-03-17",
+                "times": ["1:00 PM", "4:30 PM"]
+            }
+
+
+
+        ],
         "venue": "Charlotte Martin Theatre",
         "address": "2nd Ave N, Seattle, WA 98109",
         "description": "Transport yourself to the world of lucha libre—Mexican wrestling, with this inspired adaptation of the Chinese legend Hua Mulan. The discovery of a worn pink wrestling mask prompts Nana Lupita, a Washington grandmother, to share her coming of age story growing up in 1960s Texas. As we follow Lupita’s journey, we witness her life as a daring teen tomboy; bike riding with her friends, working at her father’s flower stand, and lucha libre. When a World Championship match is announced, Lupita’s excitement explodes; she anticipates seeing it until she discovers her ailing father is one of the wrestlers. With the help of a magical mask maker, Lupita secretly trains to take her father’s place. She soon finds it difficult keeping her secret from her friends and, most importantly, her father.",
@@ -65,6 +180,23 @@
         "cost": "high",
         "start": "2024-03014",
         "endDate": "2024-03-16",
+        "sessions": [
+            {
+              "date": "2024-03-14",
+              "times": ["7:30 PM"]
+            },
+            {
+              "date": "2024-03-15",
+              "times": ["6:00 AM", "9:30 PM"]
+            },
+            {
+                "date": "2024-03-16",
+                "times": ["6:00 AM", "9:30 PM"]
+            }
+
+
+
+        ],
         "venue": "The Triple Door",
         "address": "216 Union St, Seattle, WA 98101",
         "description": "Come spend an enchanted fairytale evening with a tour de force of talent at the stunning Triple Door for a San Francisco based touring variety show! Kat Robichaud proudly presents her Misfit Cabaret: Grimm– a night of decadence, bawdiness, and damsels (not) in distress. Experience the fantastical Rock and Roll variety show everyone is talking about! Enjoy a devilish drag performance from Johnny Rockitt, get serenaded by our special songbird Eliza Rickman, soar high in the air with our stunning aerialist, be completely spell-bound by Alice as she peers through the looking glass, and look in awe at the puppets of Shadow Circus Creature Theater!",
@@ -84,6 +216,15 @@
         "cost": "low",
         "start": "2024-02-28",
         "endDate": "2024-02-28",
+        "sessions": [
+            {
+              "date": "2024-02-28",
+              "times": ["7:00 PM"]
+            }
+
+
+
+        ],
         "venue": "Neumos",
         "address": "925 E Pike St, Seattle, WA 98122",
         "description": "Come celebrate 20 years of Neumos! Feat. Spirit Award + THEM + DJ Abbie & Troy of KEXP and an archived screen print posters sale!",
@@ -103,6 +244,35 @@
         "cost": "medium",
         "start": "2024-01-16",
         "endDate": "2024-02-18",
+        "sessions": [
+            {
+              "date": "2024-03-10",
+              "times": ["2:00 PM", "7:00 PM"]
+            },
+            {
+              "date": "2024-03-13",
+              "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-03-14",
+                "times": ["2:00 PM", "7:30 PM"]
+            },
+              {
+                "date": "2024-03-15",
+                "times": ["8:00 PM"]
+            },
+            {
+                "date": "2024-03-16",
+                "times": ["2:00 PM", "8:00 PM"]
+              },
+              {
+                "date": "2024-03-17",
+                "times": ["2:00 PM"]
+              }
+
+
+
+        ],
         "venue": "Everett Performing Arts Center",
         "address": "2710 Wetmore Avenue, Everett, WA 98201",
         "description": "She’s America’s favorite sex therapist!  Before she became Dr. Ruth, Karola Ruth Siegel had to flee Nazi Germany on the Kindertransport, become a sharpshooter in Jerusalem, and survive as a single mother in America. Filled with irrepressible wit, joy, and honesty, Becoming Dr. Ruth tells the triumphant and life-affirming story of a woman who—through her perseverance, indefatigable spirit, and bravery— carved her own unique place in the world. Acclaimed actress Naomi Jacobson reprises the role that has garnered her ovations across the country in this tour-de-force one woman play. Becoming Dr. Ruth promises an unforgettable, hilarious, and uplifting evening of theater that will touch your soul and heart.",
@@ -122,6 +292,47 @@
         "type": "Other",
         "start": "2024-02-28",
         "endDate": "2024-06-26",
+        "sessions": [
+            {
+              "date": "2024-02-28",
+              "times": ["8:00 PM"]
+            },
+            {
+              "date": "2024-03-06",
+              "times": ["8:00 PM"]
+            },
+            {
+                "date": "2024-03-13",
+                "times": ["8:00 PM"]
+            },
+              {
+                "date": "2024-03-20",
+                "times": ["8:00 PM"]
+            },
+            {
+                "date": "2024-03-27",
+                "times": ["8:00 PM"]
+            },
+              {
+                "date": "2024-04-03",
+                "times": ["8:00 PM"]
+            },
+            {
+                "date": "2024-04-10",
+                "times": ["8:00 PM"]
+            },
+            {
+                "date": "2024-04-17",
+                "times": ["8:00 PM"]
+            },
+            {
+                "date": "2024-04-24",
+                "times": ["8:00 PM"]
+            }
+
+
+
+        ],
         "venue": "Unexpected Productions Market Theater",
         "address": "1428 Post Alley, Seattle, WA 98101",
         "description": "Duo Comedy Showcase is Seattle's only public open mic for improv. Two-person teams doing what they do best: creating spontaneous scenes on the fly that are so hilarious, quick-witted, and perfectly constructed it's hard to believe they are made up on the spot. At Duos, newer improvisers have an opportunity to improve while professional improvisers practice and try new things. Who knows, you might even want to join them.",
@@ -141,6 +352,43 @@
         "cost": "medium",
         "start": "2024-02-22",
         "endDate": "2024-03-09",
+        "sessions": [
+            {
+              "date": "2024-02-25",
+              "times": ["2:00 PM"]
+            },
+            {
+              "date": "2024-02-29",
+              "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-03-01",
+                "times": ["7:30 PM"]
+            },
+              {
+                "date": "2024-03-03",
+                "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-03-04",
+                "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-03-07",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-03-08",
+                "times": ["7:30 PM"]
+              },
+            {
+                "date": "2024-03-09",
+                "times": ["2:00 PM", "7:30 PM"]
+              }
+
+
+
+        ],
         "venue": "12th Avenue Arts",
         "address": "1620 12th Ave #203, Seattle, WA 98122",
         "description": "A man in Stalin’s Russia has a perfect memory. When the State tells him to forget someone, he can’t…and then he disappears. A Soviet official is searching for him, and he tries to enlist the help of the psychologist who studied him. But are the official’s reasons political or personal? or both? A slippery examination of the connections between memory and identity, MEMOIRS OF A FORGOTTEN MAN also counts the costs we pay when the State decides what the truth is.",
@@ -160,6 +408,55 @@
         "cost": "high",
         "start": "2024-03-01",
         "endDate": "2024-03-24",
+        "sessions": [
+            {
+              "date": "2024-03-10",
+              "times": ["7:30 PM"]
+            },
+            {
+              "date": "2024-03-13",
+              "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-03-14",
+                "times": ["7:30 PM"]
+            },
+              {
+                "date": "2024-03-15",
+                "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-03-16",
+                "times": ["1:30 PM", "7:30 PM"]
+            },
+            {
+                "date": "2024-03-17",
+                "times": ["1:30 PM"]
+              },
+              {
+                "date": "2024-03-20",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-03-21",
+                "times": ["1:30 PM", "7:30 PM"]
+            },
+            {
+                "date": "2024-03-22",
+                "times": ["7:30 PM"]
+              },
+            {
+                "date": "2024-03-23",
+                "times": ["1:30 PM", "7:30 PM"]
+              },
+              {
+                "date": "2024-03-24",
+                "times": ["1:30 PM"]
+              }
+
+
+
+        ],
         "venue": "The Fifth Avenue Theatre",
         "address": "1308 5th Ave, Seattle, WA 98101",
         "description": "Prepare to laugh until it hurts with this musical spoof of the whodunit genre. Something’s Afoot pokes fun at Agatha Christie murder mysteries; ten people are stranded in an isolated country estate during a raging thunderstorm. One by one, they are picked off by cleverly fiendish devices. As bodies pile up, the survivors frantically race to solve the mystery! Join in the tomfoolery of this farcical, raucous, and outrageous play that will appeal to lovers of shows like Arrested Development, The Office, and Schitt’s Creek.",
@@ -179,6 +476,19 @@
         "cost": "low",
         "start": "2024-01-01",
         "endDate": "2024-03-02",
+        "sessions": [
+            {
+              "date": "2024-03-01",
+              "times": ["8:00 PM"]
+            },
+            {
+              "date": "2024-03-02",
+              "times": ["2:00 PM", "8:00 PM"]
+            }
+
+
+
+        ],
         "venue": "Cornish Playhouse",
         "address": "201 Mercer St, Seattle, WA 98109",
         "description": "Cornish Dance Seniors present their Capstone Projects in the form of choreography, performance, site-specific work, and screendance. These students engage in a creative process that reflects on their dance research over their time at Cornish and culminates in a shared performance of diverse works at the Cornish Playhouse on March 1-2, 2024.",
@@ -198,6 +508,55 @@
         "cost": "medium",
         "start": "2024-02-16",
         "endDate": "2024-03-03",
+        "sessions": [
+            {
+              "date": "2024-02-16",
+              "times": ["7:30 PM"]
+            },
+            {
+              "date": "2024-02-17",
+              "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-02-18",
+                "times": ["7:30 PM"]
+            },
+              {
+                "date": "2024-02-22",
+                "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-02-23",
+                "times": ["1:30 PM", "7:30 PM"]
+            },
+            {
+                "date": "2024-02-24",
+                "times": ["1:30 PM"]
+              },
+              {
+                "date": "2024-02-25",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-02-29",
+                "times": ["1:30 PM", "7:30 PM"]
+            },
+            {
+                "date": "2024-03-01",
+                "times": ["7:30 PM"]
+              },
+            {
+                "date": "2024-03-02",
+                "times": ["1:30 PM", "7:30 PM"]
+              },
+              {
+                "date": "2024-03-03",
+                "times": ["1:30 PM"]
+              }
+
+
+
+        ],
         "venue": "Valley Center Stage",
         "address": "1060 Stilson Ave SE, North Bend, WA 98045",
         "description": "Penniless and indebted to two demanding producers, struggling young playwright William Shakespeare is tormented by writer’s block until he meets the beautiful Viola de Lesseps, daughter of a wealthy merchant,whose fiery passion for poetry and drama leaves her secretly longing to be an actor. Both are despondent when they learn that Viola’s father has promised her to the stuffy Lord Wessex in order to gain a eventName for their family. Under the veil of secrecy, Will and Viola’s passionate love affair becomes the basis of the very play he is writing – Romeo and Juliet. With opening night – and the wedding day – fast approaching, the plots race toward a parallel conclusion. Will it all work out in the end or are the two star-crossed lovers bound for tragedy?",
@@ -217,6 +576,15 @@
         "cost": "low",
         "start": "2024-03-01",
         "endDate": "2024-03-01",
+        "sessions": [
+            {
+              "date": "2024-03-01",
+              "times": ["7:00 PM"]
+            }
+
+
+
+        ],
         "venue": "The Rabbit Box Theatre",
         "address": "94 Pike St, Seattle, WA 98101",
         "description": "Loosegroove Records Presents an Intimate Evening of Music with Brittany Davis, Zoser, Mason Jennings and Jonny Polonsky.",
@@ -236,6 +604,71 @@
         "cost": "medium",
         "start": "2024-03-24",
         "endDate": "2024-04-14",
+        "sessions": [
+            {
+              "date": "2024-03-22",
+              "times": ["7:30 PM"]
+            },
+            {
+              "date": "2024-03-23",
+              "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-03-24",
+                "times": ["2:00 PM"]
+            },
+              {
+                "date": "2024-03-28",
+                "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-03-29",
+                "times": ["7:30 PM"]
+            },
+              {
+                "date": "2024-03-30",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-03-31",
+                "times": ["2:00 PM"]
+            },
+            {
+                "date": "2024-04-04",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-05",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-06",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-07",
+                "times": ["2:00 PM"]
+              },
+              {
+                "date": "2024-04-11",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-12",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-13",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-14",
+                "times": ["2:00 PM"]
+              }
+
+
+
+        ],
         "venue": "Seattle Public Theater",
         "address": "7312 West Green Lake Dr N, Seattle, WA 98103",
         "description": "Two sisters and a dog live out their lives on the bleak English moors, dreaming of love and power. The arrival of a hapless governess and a moor-hen set all three on a strange and dangerous path. The Moors is a dark comedy about love, desperation, and visibility.",
@@ -255,6 +688,75 @@
         "cost": "low",
         "start": "2024-04-12",
         "endDate": "2024-05-12",
+        "sessions": [
+            {
+              "date": "2024-04-12",
+              "times": ["7:30 PM"]
+            },
+            {
+              "date": "2024-04-13",
+              "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-04-14",
+                "times": ["7:30 PM"]
+            },
+              {
+                "date": "2024-04-16",
+                "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-04-17",
+                "times": ["7:30 PM"]
+            },
+            {
+                "date": "2024-04-19",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-20",
+                "times": ["2:00 PM", "7:30 PM"]
+              },
+              {
+                "date": "2024-04-21",
+                "times": ["12:00 PM", "5:30 PM"]
+            },
+            {
+                "date": "2024-04-24",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-25",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-26",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-04-27",
+                "times": ["2:00 PM", "7:30 PM"]
+              },
+              {
+                "date": "2024-04-28",
+                "times": ["12:00 PM", "5:30 PM"]
+              },
+              {
+                "date": "2024-05-01",
+                "times": ["2:00 PM", "7:30 PM"]
+              },
+              {
+                "date": "2024-04-13",
+                "times": ["7:30 PM"]
+              },
+              {
+                "date": "2024-05-02",
+                "times": ["7:30 PM"]
+              }
+
+
+
+        ],
         "venue": "Bagley Wright Theater",
         "address": "155 Mercer St, Seattle, WA 98109",
         "description": "Juicy, a young queer Black man, has a lot on his plate. His mother just married his uncle after the untimely death of his father, whose ghost appears at a family barbecue demanding that Juicy avenge his murder. Sound familiar? Fresh from its Broadway debut, this Pulitzer Prize-winning play inspired by Shakespeare’s Hamlet is a sparkling and uproarious new comedy about seeking love and liberation.",
@@ -274,6 +776,24 @@
         "cost": "low",
         "start": "2024-02-16",
         "endDate": "2024-03-03",
+        "sessions": [
+            {
+              "date": "2024-02-18",
+              "times": ["2:00 PM"]
+            },
+            {
+              "date": "2024-02-25",
+              "times": ["2:00 PM"]
+            },
+            {
+                "date": "2024-03-03",
+                "times": ["2:00 PM"]
+            }
+
+
+
+
+        ],
         "venue": "Broadway Performance Hall",
         "address": "1625 Broadway, Seattle, WA 98122",
         "description": "WORLD PREMIERE! Conceived as both a play and a dance show, Unstoppable: A Queer Dancical is an unapologetic ode to the power and resilience of the LGBTQ+ community. The story follows Nikki and Keith, best friends from a small town, as they experience the communitys response to a hate crime incident. Expect love stories, political drama, fabulous drag queens, and 20+ dance numbers set to familiar pop hits. Pioneering a new format that speaks to fans of musicals, dance shows, and traditional plays, Unstoppable: A Queer Dancical is an emotional journey that aims to inspire hope and unity in all of us.",
