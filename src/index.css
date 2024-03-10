@@ -93,6 +93,61 @@ section {
     }
 }
 
+/* Calendar Coloring */
+/* Juliette */
+:root {
+    --fc-today-bg-color: #fcada9;
+    --fc-border-color: #B6433E;
+    --fc-button-bg-color: #B6433E;
+}
+
+.fc-theme-standard {
+    color: #B6433E;
+}
+
+/* Calendar Page Background and Spacing */
+/* Juliette */
+.calPage {
+    padding: 20px;
+    background-color: #faf7e3; 
+}
+
+/* Text Wrap for Large Screen Events */
+/* Juliette */
+@media (min-width: 768px) {
+    .fc-event-time, .fc-event-title {
+        padding: 0 1px;
+        white-space: normal;
+    }
+}
+
+/* Dropdown Menu Styling */
+/* Juliette */
+.dropMenu {
+    margin-bottom: 15px;
+    display: flex;
+    position: relative;
+    z-index: 9999;
+}
+
+.dropMenu > div {
+    margin-right: 10px;
+    width: 18vw;
+}
+
+/* Dropdown Menu Mobile Styling */
+/* Juliette */
+@media (max-width: 768px) {
+    .dropMenu {
+        flex-direction: column;
+    }
+
+    .dropMenu > div {
+        margin-bottom: 10px;
+        width: 55vw;
+    }
+}
+
 /* HOME PAGE CARDS */
 /* Salley */
 .container {
