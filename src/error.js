@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function ErrorPage() {
   return (
-    <div>
-        <div style={{ marginTop: '7vh', textAlign:'center', fontSize:'10vw', color:'white' }}>
+    <div className='errorPage'>
+        <div>
             <p>404</p>
         </div>
-        <div style={{ marginBottom: '7vh', textAlign:'center', fontSize:'4vw', color:'white' }}>
+        <div className='errorSmall'>
             <p>Page Not Found</p>
         </div>
     </div>

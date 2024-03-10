@@ -148,6 +148,20 @@ section {
     }
 }
 
+/* Error Page Styling */
+/* Juliette */
+.errorPage {
+    margin-top: 7vh;
+    text-align: center;
+    font-size: 10vw;
+    color: white;
+}
+
+.errorSmall {
+    font-size: 4vw;
+    margin-bottom: 10vh;
+}
+
 /* HOME PAGE CARDS */
 /* Salley */
 .container {
