@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ref, push, get, query, orderByChild } from 'firebase/database';
 
-function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, reviewOne, reviewTwo, currentUser, saved }) {
+function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, reviewOne, reviewTwo, currentUser, saved, sessions }) {
     const [loading, setLoading] = useState(false);
     const [save, setSave] = useState(false);
 
@@ -34,19 +34,19 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
             // snapshot contains data from database
             .then((snapshot) => {
                 if (snapshot.exists()) {
-                const savedEvents = snapshot.val();
-                // check if current event already saved by comparing event id
-                // to ones of saved events
-                const isEventAlreadySaved = Object.values(savedEvents).some(event => event.eventId === eventId);
-                if (isEventAlreadySaved) {
-                    alert('Event is already saved.');
-                    setLoading(false);
-                } else {
-                    // adds delay (makes Saving... longer so users can see)
-                    setTimeout(() => {
-                        saveEvent();
-                    }, 1000); 
-                }
+                    const savedEvents = snapshot.val();
+                    // check if current event already saved by comparing event id
+                    // to ones of saved events
+                    const isEventAlreadySaved = Object.values(savedEvents).some(event => event.eventId === eventId);
+                    if (isEventAlreadySaved) {
+                        alert('Event is already saved.');
+                        setLoading(false);
+                    } else {
+                        // adds delay (makes Saving... longer so users can see)
+                        setTimeout(() => {
+                            saveEvent();
+                        }, 1000); 
+                    }
                 } else {
                     setTimeout(() => {
                         saveEvent();
@@ -56,100 +56,66 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
             .catch((error) => {
                 console.error('Error checking saved events: ', error);
                 setLoading(false);
-            }
-        );
+            });
+    };
+
+    // Function to render each session's times and dates dynamically
+    const renderSessions = () => {
+        return sessions.map((session, index) => (
+            <div className="date-time" key={index}>
+                <h4>{session.date}</h4>
+                <ul>
+                    {session.times.map((time, timeIndex) => (
+                        <li key={timeIndex}>
+                            {time} <Link to={link} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        ));
     };
 
     return (
         <main>
-        <div className="event-card-container">
-            <div className="event-schedule-container">
-                <div className="event-card">
-                    <div className="img-section">
-                        <img src={image} alt={alt} />
+            <div className="event-card-container">
+                <div className="event-schedule-container">
+                    <div className="event-card">
+                        <div className="img-section">
+                            <img src={image} alt={alt} />
+                        </div>
+                        <div className="name-theater-section">
+                            <h2>{eventName}</h2>
+                            <h3>{venue}</h3>
+                            <h4>{address}</h4>
+                        </div>
+                        {/* save button only will be rendered for users signed in */}
+                        {currentUser && (
+                            <button className="save-button" onClick={handleClick} disabled={loading || save}>
+                                {loading ? 'Saving...' : save ? 'Saved!' : 'Save'}
+                            </button>
+                        )}
                     </div>
-                    <div className="name-theater-section">
-                        <h2>{eventName}</h2>
-                        <h3>{venue}</h3>
-                        <h4>{address}</h4>
-                    </div>
-                    {/* save button only will be rendered for users signed in */}
-                    {currentUser && (
-                        <button className="save-button" onClick={handleClick} disabled={loading || save}>
-                            {loading ? 'Saving...' : save ? 'Saved!' : 'Save'}
-                        </button>
-                    )}
-                </div>
-                <div className="schedule">
-                    {/* FOR NEXT DRAFT: create schedule array so unique schedules are on display for each event */}
-                    <h2>Dates & Times</h2>
-                    <h3>{start} to {endDate}</h3>
-                    <div className="date-time">
-                        <h4>Jan 3</h4>
-                        <ul>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'Low Tix!'}</Link></li>
-                            <li>7:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'SOLD OUT'}</Link></li>
-                        </ul>
-                    </div>
-                    <div className="date-time">
-                        <h4>Jan 5</h4>
-                        <ul>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'Low Tix!'}</Link></li>
-                        </ul>
-                    </div>
-                    <div className="date-time">
-                        <h4>Jan 8</h4>
-                        <ul>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
-                        </ul>
-                    </div>
-                    <div className="date-time">
-                        <h4>Jan 9</h4>
-                        <ul>
-                            <li>7:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'SOLD OUT'}</Link></li>
-                            <li>7:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'SOLD OUT'}</Link></li>
-                        </ul>
-                    </div>
-                    <div className="date-time">
-                        <h4>Jan 12</h4>
-                        <ul>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'Low Tix!'}</Link></li>
-                        </ul>
-                    </div>
-                    <div className="date-time">
-                        <h4>Jan 13</h4>
-                        <ul>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
-                        </ul>
-                    </div>
-                    <div className="date-time">
-                        <h4>Jan 16</h4>
-                        <ul>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link></li>
-                            <li>2:00 PM <Link to={link} onClick={handleClick} className="ticket-status">{loading ? 'Loading...' : 'Low Tix!'}</Link></li>
-                        </ul>
+                    <div className="schedule">
+                        <h2>Dates & Times</h2>
+                        <h3>{start} to {endDate}</h3>
+                        {renderSessions()}
                     </div>
                 </div>
-            </div>
 
-            <div className="about-review-container">
-                <div className="about-section">
-                    <h2>About the Show</h2>
-                    <p>{description}</p>
-                </div>
-                <div className="review-section">
-                    <h2>Reviews</h2>
-                    <ul>
-                        <li><p>{reviewOne}</p></li>
-                        <li><p>{reviewTwo}</p></li>
-                    </ul>
+                <div className="about-review-container">
+                    <div className="about-section">
+                        <h2>About the Show</h2>
+                        <p>{description}</p>
+                    </div>
+                    <div className="review-section">
+                        <h2>Reviews</h2>
+                        <ul>
+                            <li><p>{reviewOne}</p></li>
+                            <li><p>{reviewTwo}</p></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </main>
     );
 }
