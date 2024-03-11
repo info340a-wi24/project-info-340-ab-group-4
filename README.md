@@ -1,25 +1,24 @@
-# Getting Started with Create React App
+# Seattle Curtain Call
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created by Juliette Jones, Jason Yu, Salley Fang, and Salley Fang as their final project proposal for INFO 340, Winter 2024.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+Our project features the following features:
 
-### `npm start`
+### 1. Event Calendar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Filter events based on genre, audience size, and pricepoint
+* Can view multiple months using arrows
+* Can click on an event on the calendar and view an external website for it
+* Can view new events submitted using the Event Submission page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Events
 
-### `npm test`
+* Can search events by name or scroll through list
+* After clicking event details, takes users to a card with venue location, venue address, dates & times of events, link to buy tickets by clicing 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+### 3. 
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -39,32 +38,30 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Our Pages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We included 6 different pages on our website.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Home Page
 
-### Code Splitting
+This section has moved
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Event Calendar
 
-### Analyzing the Bundle Size
+This section has moved her
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Events Page
 
-### Making a Progressive Web App
+This section has moved here
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Event Card (after clicking on Event Details)
 
-### Advanced Configuration
+This section has moved here
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Event Submission
 
-### Deployment
+This section has moved here
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Profile
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here
