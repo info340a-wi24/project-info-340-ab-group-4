@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ref, push, get, query, orderByChild } from 'firebase/database';
 
-function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, reviewOne, reviewTwo, currentUser, saved, sessions }) {
+function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, imgCite, reviewOne, reviewTwo, currentUser, saved, sessions }) {
     const [loading, setLoading] = useState(false);
     const [save, setSave] = useState(false);
 
@@ -82,6 +82,7 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
                     <div className="event-card">
                         <div className="img-section">
                             <img src={image} alt={alt} />
+                            {imgCite && <cite>{imgCite}</cite>}
                         </div>
                         <div className="name-theater-section">
                             <h2>{eventName}</h2>
