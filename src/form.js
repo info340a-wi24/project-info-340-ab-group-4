@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from 'react';
-import Select from 'react-select';
 import { ref, push, getDatabase, set } from 'firebase/database';
 
 function Form(){
@@ -33,6 +32,8 @@ function Form(){
     const [showWarning, setShowWarning] = useState(false);
     const [submissionMessage, setSubmissionMessage] = useState('');
     
+    const types = ["Play", "Musical", "Cabaret", "Concert", "Dance", "Other"];
+
     const valid = () => {
         if (eventName === '' || startDate === '' || endDate === '') {
             setShowWarning(true);
@@ -55,7 +56,7 @@ function Form(){
                 startTime: startTime,
                 endTime: endTime,
                 size: size,
-                price: price,
+                cost: price,
                 venue: venue,
                 address: address,
 
@@ -134,22 +135,10 @@ function Form(){
                         </div>
 
                         <div>
+                            <p>Please fill in one of "Play, Musical, Cabaret, Concert, Dance or Other" for the type, Make sure to capitalize the first letter!.</p>
                             <p><label>Performance Type: </label> 
-                            <Select 
-                                id="type" 
-                                className="form-control" 
-                                value={type} 
-                                onChange={vl => setType(vl.target.value)} 
-                                options={[
-                                    {label: "Play", value: "Play"},
-                                    {label: "Musical", value: "Musical"},
-                                    {label: "Cabaret", value: "Cabaret"},
-                                    {label: "Concert", value: "Concert"},
-                                    {label: "Dance", value: "Dance"},
-                                    {label: "Other", value: "Other"},
-                                ]} 
-                            />
-                            {showWarning && type === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
+                            <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)} placeholder="(e.g., dance, theater)."/></p>
+                            {showWarning && !types.includes(type) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}
                         </div>
 
                         
