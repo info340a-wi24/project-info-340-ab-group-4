@@ -8,8 +8,6 @@ function Form(){
     const [type, setType] = useState('');
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
-    const [startTime, setStartTime] = useState('');
-    const [endTime, setEndTime] = useState('');  
     const [size, setSize] = useState('');
     const [price, setPrice] = useState('');
     const [venue, setVenue] = useState('');
@@ -53,8 +51,6 @@ function Form(){
                 type: type,
                 start: startDate,
                 end: endDate,
-                startTime: startTime,
-                endTime: endTime,
                 size: size,
                 cost: price,
                 venue: venue,
@@ -80,8 +76,6 @@ function Form(){
             setType('');
             setStartDate('');
             setEndDate('');
-            setStartTime('');
-            setEndTime('');
             setSize('');
             setPrice('');
             setVenue('');
@@ -115,7 +109,7 @@ function Form(){
                 
 
                 <h1>{submissionMessage || 'Shine on Our Stage'}</h1>
-                <p id="com">{"Don't let any performance go unnoticed"}</p>
+                <p id="com">{"Save the event to the calendar!"}</p>
 
         
                 <form onSubmit={subm}>
@@ -135,7 +129,7 @@ function Form(){
                         </div>
 
                         <div>
-                            <p>Please fill in one of "Play, Musical, Cabaret, Concert, Dance or Other" for the type, Make sure to capitalize the first letter!.</p>
+                            <p style={{ color: "#B6433E" }}>Please type "Play", "Musical", "Cabaret", "Concert", "Dance" or "Other".</p>
                             <p><label>Performance Type: </label> 
                             <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)} placeholder="(e.g., dance, theater)."/></p>
                             {showWarning && !types.includes(type) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}
@@ -155,23 +149,14 @@ function Form(){
                         </div>
 
                         <div>
-                            <p><label>Start Time: </label>
-                            <input id="time_input1" className="form-control" type='time' value={startTime} onChange={vl => setStartTime(vl.target.value)} /></p>
-                        </div>
-
-
-                        <div>
-                            <p><label>End Time: </label> 
-                            <input id="time_input2" className="form-control" type="time" value={endTime} onChange={vl => setEndTime(vl.target.value)}/></p>
-                        </div>
-
-                        <div>
+                            <p style={{ color: "#B6433E" }}>Please type "small", "medium", or "large".</p>
                             <p><label>Audience size: </label> 
                             <input id="tsize" className="form-control" value={size} onChange={vl => setSize(vl.target.value)}/>
                             {showWarning && size === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
                         </div>
 
                         <div>
+                            <p style={{ color: "#B6433E" }}>Please type "$", "$$", "$$$".</p>
                             <p><label>Ticket price: </label> 
                             <input id="tsize" className="form-control" value={price} onChange={vl => setPrice(vl.target.value)}/>
                             {showWarning && price === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
