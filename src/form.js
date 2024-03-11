@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { ref, push, getDatabase, set } from 'firebase/database';
+import { ref, push, getDatabase } from 'firebase/database';
 
 function Form(){
     const [eventName, setEventName] = useState('');

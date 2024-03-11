@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { signOut, getAuth, updateProfile, updatePassword } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Config';
-import { update, getDatabase, ref, onValue } from 'firebase/database';
+import { getDatabase, ref, onValue } from 'firebase/database';
 import { Link } from 'react-router-dom';
 
 const app = initializeApp(firebaseConfig);
@@ -27,6 +27,16 @@ function Profile() {
     })
   }, []);
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        setUsername(user.displayName);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   // changing username and password
   const handleUsernameChange = (event) => setUsername(event.target.value);
   const handlePasswordChange = (event) => setPassword(event.target.value);
@@ -41,9 +51,11 @@ function Profile() {
       if (password) {
         await updatePassword(auth.currentUser, password);
       }
+      setUsername('');
+      setPassword('');
       console.log('Profile Updated', { username, password });
       alert('Changes saved successfully!');
-      // reload after updating username/password so it displays in the welcome message
+      // reload after updating username so it displays in the welcome message
       window.location.reload();
     } catch (error) {
       console.error('Error updating profile: ', error);
