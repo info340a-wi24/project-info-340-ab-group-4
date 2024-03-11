@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { signOut, getAuth, updateProfile, updatePassword } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Config';
-import { getDatabase, ref, onValue } from 'firebase/database';
+import { update, getDatabase, ref, onValue } from 'firebase/database';
 import { Link } from 'react-router-dom';
 
 const app = initializeApp(firebaseConfig);
@@ -12,18 +12,6 @@ function Profile() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [savedEvents, setSavedEvents] = useState([]);
-
-  // useEffect(() => {
-  //   const unsubscribe = auth.onAuthStateChanged(user => {
-  //     if (user) {
-  //       setUsername(user.displayName || '');
-  //     } else {
-  //       setUsername('');
-  //     }
-  //   });
-
-  //   return () => unsubscribe();
-  // }, []);
 
   // fetch saved events data from firebase db called saved-events
   useEffect(() => {
@@ -47,11 +35,16 @@ function Profile() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // update username
       await updateProfile(auth.currentUser, { displayName: username });
-      await updatePassword(auth.currentUser, password);
+      // update password
+      if (password) {
+        await updatePassword(auth.currentUser, password);
+      }
       console.log('Profile Updated', { username, password });
       alert('Changes saved successfully!');
-
+      // reload after updating username/password so it displays in the welcome message
+      window.location.reload();
     } catch (error) {
       console.error('Error updating profile: ', error);
       alert('Failed to save changes. Please try again.');
@@ -70,7 +63,6 @@ function Profile() {
   return (
     <main>
       <div className="profile-container">
-        {/* TO DO: Change so it actually says right username */}
         <h1>Welcome back, {auth.currentUser.displayName}</h1>
         <div className="account-settings">
           <h2>Account Settings</h2>
