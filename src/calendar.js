@@ -4,7 +4,9 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import eventsData from './events-data.json';
+import { getDatabase, ref, onValue, off } from 'firebase/database';
+import { firebaseConfig } from './Config';
+import { initializeApp } from 'firebase/app';
 
 
 const customStyles = {
@@ -29,7 +31,7 @@ const customStyles = {
     }),
 };
 
-function Calendar() {
+function Calendar({ eventsDatabase }) {
 
     const [selectedGenre, setSelectedGenre] = useState('all');
     const [selectedSize, setSelectedSize] = useState('all');
@@ -39,9 +41,27 @@ function Calendar() {
     const [sizePlaceholder, setSizePlaceholder] = useState('Select Audience Size');
     const [costPlaceholder, setCostPlaceholder] = useState('Select Pricepoint');
 
-
     useEffect(() => {
-        setEvents(eventsData);
+        // Initialize Firebase app
+        const firebaseApp = initializeApp(firebaseConfig);
+        const database = getDatabase(firebaseApp);
+        const eventsRef = ref(database, 'events-data');
+
+        // Listen for changes to events data
+        const handleData = (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                setEvents(data);
+            }
+        };
+
+        // Subscribe to events data
+        onValue(eventsRef, handleData);
+
+        // Unsubscribe from events data when component unmounts
+        return () => {
+            off(eventsRef, 'value', handleData);
+        };
     }, []);
 
     const handleEventClick = (info) => {

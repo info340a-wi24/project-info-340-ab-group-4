@@ -6,6 +6,7 @@
 export const firebaseConfig = {
   apiKey: "AIzaSyBk5tszVG5pnjFud_Cs3Gj1QecXl8Y7FwE",
   authDomain: "seattle-curtain-call-447b9.firebaseapp.com",
+  databaseURL: "https://seattle-curtain-call-447b9-default-rtdb.firebaseio.com",
   projectId: "seattle-curtain-call-447b9",
   storageBucket: "seattle-curtain-call-447b9.appspot.com",
   messagingSenderId: "963063608298",
