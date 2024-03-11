@@ -1,16 +1,40 @@
 import React from 'react';
 import { useState } from 'react';
+import Select from 'react-select';
+import { ref, push, getDatabase, set } from 'firebase/database';
 
 function Form(){
     const [eventName, setEventName] = useState('');
-    const [eventDate, setEventDate] = useState('');
+    const [description, setDescription] = useState('');
+    const [type, setType] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
     const [startTime, setStartTime] = useState('');
-    const [location, setLocation] = useState('');
+    const [endTime, setEndTime] = useState('');  
+    const [size, setSize] = useState('');
+    const [price, setPrice] = useState('');
+    const [venue, setVenue] = useState('');
+    const [address, setAddress] = useState('');
+
+    const [email, setEmail] = useState('');
+    const [phonum, setPhonum] = useState('');
+    const [orgurl, setOrgurl] = useState('');
+    
+    const [pername, setPername] = useState('');
+    const [bg, setBg] = useState('');
+    
+    const [tkurl, setTkurl] = useState('');
+    const [poster, setPoster] = useState('');
+    const [media, setMedia] = useState('');
+    const [review1, setReview1] = useState('');
+    const [review2, setReview2] = useState('');
+    const [addinfo, setAddinfo] = useState('');
+
     const [showWarning, setShowWarning] = useState(false);
     const [submissionMessage, setSubmissionMessage] = useState('');
-
+    
     const valid = () => {
-        if (eventName === '' || eventDate === '' || startTime === '') {
+        if (eventName === '' || startDate === '' || endDate === '') {
             setShowWarning(true);
             document.getElementById('name').scrollIntoView();
             return false;
@@ -21,11 +45,66 @@ function Form(){
     const subm = (vl) => {
         vl.preventDefault(); 
         if (valid()) {
+            const eventRef = ref(getDatabase(), 'events');
+            push (eventRef, {
+                eventName: eventName,
+                description: description,
+                type: type,
+                start: startDate,
+                end: endDate,
+                startTime: startTime,
+                endTime: endTime,
+                size: size,
+                price: price,
+                venue: venue,
+                address: address,
+
+                email: email,
+                phone: phonum,
+                organizerLink: orgurl,
+
+                PerformerName: pername,
+                backgroundInfo: bg,
+
+                TicketLink: tkurl,
+                poster: poster,
+                SocialMedia: media,
+                reviewOne: review1,
+                reviewTwo:review2,
+                AdditionalInfo: addinfo,
+
+            }).then(() => {
             setEventName('');
-            setEventDate('');
+            setDescription('');
+            setType('');
+            setStartDate('');
+            setEndDate('');
             setStartTime('');
+            setEndTime('');
+            setSize('');
+            setPrice('');
+            setVenue('');
+            setAddress('');
+
+            setEmail('');
+            setPhonum('');
+            setOrgurl('');
+            
+            setPername('');
+            setBg('');
+
+            setTkurl('');
+            setPoster('');
+            setMedia('');
+            setReview1('');
+            setReview2('');
+            setAddinfo('');
+
             setSubmissionMessage('Your information has been successfully submitted!');
             window.scrollTo(0, 0);
+        }).catch((error) => {
+            console.error("Error", error);
+        });
         }
     };
 
@@ -43,38 +122,80 @@ function Form(){
                         <h2 className="F1">Event Information</h2>
 
                         <div>
-                        <label>Event Name:</label>
-                        <input id="name" className="form-control" value={eventName} onChange={vl => setEventName(vl.target.value)} />
-                        {showWarning && eventName === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}
+                            <p><label>Event Name: </label>
+                            <input id="name" className="form-control" value={eventName} onChange={vl => setEventName(vl.target.value)} />
+                            {showWarning && eventName === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
                         </div>
 
                         
                         <div>
-                            <p><label for="EventDes">Description:</label> <input id="des" placeholder="A overview of this event"/></p>
-                            <p><label for="Type:">Performance Type:</label> <input id="type" placeholder="(e.g., dance, theater)."/></p>
+                            <p><label>Description: </label> 
+                            <input id="des" className="form-control" value={description} onChange={vl => setDescription(vl.target.value)} placeholder="A overview of this event"/></p>
+                        </div>
+
+                        <div>
+                            <p><label>Performance Type: </label> 
+                            <Select 
+                                id="type" 
+                                className="form-control" 
+                                value={type} 
+                                onChange={vl => setType(vl.target.value)} 
+                                options={[
+                                    {label: "Play", value: "Play"},
+                                    {label: "Musical", value: "Musical"},
+                                    {label: "Cabaret", value: "Cabaret"},
+                                    {label: "Concert", value: "Concert"},
+                                    {label: "Dance", value: "Dance"},
+                                    {label: "Other", value: "Other"},
+                                ]} 
+                            />
+                            {showWarning && type === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
                         </div>
 
                         
                         <div>
-                            <label>Event Date:</label>
-                            <input id="date_input" className="form-control" type='date' value={eventDate} onChange={vl => setEventDate(vl.target.value)} />
-                            {showWarning && eventDate === '' && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}
+                            <p><label>Start Date: </label>
+                            <input id="date_input1" className="form-control" type='date' value={startDate} onChange={vl => setStartDate(vl.target.value)} />
+                            {showWarning && startDate === '' && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}</p>
                         </div>
 
                         <div>
-                            <label>Start Time:</label>
-                            <input id="time_input1" className="form-control" type='time' value={startTime} onChange={vl => setStartTime(vl.target.value)} />
-                            {showWarning && startTime === '' && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}
+                            <p><label>End Date: </label>
+                            <input id="date_input2" className="form-control" type='date' value={endDate} onChange={vl => setEndDate(vl.target.value)} />
+                            {showWarning && endDate === '' && <div style={{ color: 'red' }} className="warning">This field is not valid</div>}</p>
+                        </div>
+
+                        <div>
+                            <p><label>Start Time: </label>
+                            <input id="time_input1" className="form-control" type='time' value={startTime} onChange={vl => setStartTime(vl.target.value)} /></p>
                         </div>
 
 
                         <div>
-                            <p><label for="ETime">End Time:</label> <input id="time_input2" type="time" className="form-control"/><div id="timewarning2" className="warning"></div></p>
+                            <p><label>End Time: </label> 
+                            <input id="time_input2" className="form-control" type="time" value={endTime} onChange={vl => setEndTime(vl.target.value)}/></p>
                         </div>
 
                         <div>
-                            <label>Location:</label>
-                            <input id="loca_input" className="form-control" value={location} onChange={vl => setLocation(vl.target.value)} />
+                            <p><label>Audience size: </label> 
+                            <input id="tsize" className="form-control" value={size} onChange={vl => setSize(vl.target.value)}/>
+                            {showWarning && size === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
+                        </div>
+
+                        <div>
+                            <p><label>Ticket price: </label> 
+                            <input id="tsize" className="form-control" value={price} onChange={vl => setPrice(vl.target.value)}/>
+                            {showWarning && price === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
+                        </div>
+
+                        <div>
+                            <p><label>Venue: </label>
+                            <input id="venue_input" className="form-control" value={venue} onChange={vl => setVenue(vl.target.value)} /></p>
+                        </div>
+
+                        <div>
+                            <p><label>Address: </label>
+                            <input id="address_input" className="form-control" value={address} onChange={vl => setAddress(vl.target.value)} /></p>
                         </div>
 
                     </section>
@@ -82,28 +203,66 @@ function Form(){
                     <section className="part">
                         <h2 className="F2">Contact Information</h2>
                         <div>
-                            <p><label for="email_input">Email:</label> <input id="email_input" type="email" placeholder="email@domain.com" name="email"/></p>
-                            <p><label for="phone_number">phone number:</label> <input id="phone_input"/></p>
-                            <p><label for="organizerURL">Link to organizer:</label><input id="officeURL" placeholder="Official website link"/></p>
+                            <p><label for="email_input">Email: </label>
+                            <input id="email_input" className="form-control" type="email" value={email} onChange={vl => setEmail(vl.target.value)} placeholder="email@domain.com" name="email"/></p>
+                        </div>
+
+                        <div>
+                            <p><label for="phone_number">phone number: </label> 
+                            <input id="phone_input" className="form-control" value={phonum} onChange={vl => setPhonum(vl.target.value)}/></p>
+                        </div>
+
+                        <div>
+                            <p><label for="organizerURL">organizer: </label>
+                            <input id="officeURL" className="form-control" value={orgurl} onChange={vl => setOrgurl(vl.target.value)}/></p>
                         </div>
                     </section>
 
                     <section className="part">
                         <h2 className="F3">Participant Information</h2>
                         <div>
-                            <p><label id="Performer">Performer Name:</label> <input id="pername"/></p>
-                            <p><label id="BgInfo">Background Information:</label> <input id="intro"/></p>
+                            <p><label id="Performer">Performer Name: </label> 
+                            <input id="pername" className="form-control" value={pername} onChange={vl => setPername(vl.target.value)}/></p>
+                        </div>
+
+                        <div>
+                            <p><label id="BgInfo">Background Information: </label> 
+                            <input id="intro" className="form-control" value={bg} onChange={vl => setBg(vl.target.value)}/></p>
                         </div>
                     </section>
 
                     <section className="part">
                     <h2 className="F4">Additional Information</h2>
                         <div>
-                            <p><label for="OfficialTicketLink">Official Ticket Link</label> <input id="tkURL" placeholder="URL"/></p>
-                            <p><label for="Poster/Image">Poster:</label> <input id="poster" type="file" accept="image/*"/></p>
-                            <p><label for="SocialMedia">Social Media Links:</label> <input id="medialink" placeholder="URL"/></p>
-                            <p><label for="notes">Additional Info:</label> <input id="addinfo" placeholder="More Information"/></p>
+                            <p><label for="OfficialTicketLink">Official Ticket Link: </label> 
+                            <input id="tkURL" className="form-control" value={tkurl} onChange={vl => setTkurl(vl.target.value)} placeholder="URL"/></p>
                         </div>
+
+                        <div>
+                            <p><label for="Poster/Image">Poster: </label> 
+                            <input id="poster" type="file" accept="image/*" className="form-control" value={poster} onChange={vl => setPoster(vl.target.value)}/></p>
+                        </div>
+
+                        <div>
+                            <p><label for="SocialMedia">Poster description: </label> 
+                            <input id="medialink" className="form-control" value={media} onChange={vl => setMedia(vl.target.value)}/></p>
+                        </div>
+
+                        <div>
+                            <p><label for="notes">Review 1: </label> 
+                            <input id="review1" className="form-control" value={review1} onChange={vl => setReview1(vl.target.value)} placeholder="Any comments?"/></p>
+                        </div>
+
+                        <div>
+                            <p><label for="notes">Review 2: </label> 
+                            <input id="review2" className="form-control" value={review2} onChange={vl => setReview2(vl.target.value)}/></p>
+                        </div>
+
+                        <div>
+                            <p><label for="notes">Additional Info: </label> 
+                            <input id="addinfo" className="form-control" value={addinfo} onChange={vl => setAddinfo(vl.target.value)} placeholder="More Information"/></p>
+                        </div>
+
                     </section>
                     <button type="submit"><i alt="Submit">Submit</i></button>
                 </form>
