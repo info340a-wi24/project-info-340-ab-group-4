@@ -249,7 +249,7 @@ main {
 }
 
 .sign-in-box {
-    background-color: lightgray;
+    background-color: #faf7e3;
     max-width: 35em;
     width: 100%;
     padding: 3em;
@@ -581,7 +581,7 @@ main {
 /* PROFILE PAGE */
 /* Salley */
 .account-settings {
-    background-color: lightgray;
+    background-color: #faf7e3;
     border-radius: 1em;
     box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.1);
     padding: 2em;
