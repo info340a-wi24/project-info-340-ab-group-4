@@ -81,7 +81,7 @@ function Profile() {
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="username">Username:</label>
-              <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} /><br />
+              <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} autoComplete="username" /><br />
             </div>
             {/* <div className="form-group">
               <label htmlFor="name">Password:</label>
