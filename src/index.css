@@ -116,15 +116,6 @@ section {
     background-color: #faf7e3; 
 }
 
-/* Text Wrap for Large Screen Events */
-/* Juliette */
-@media (min-width: 768px) {
-    .fc-event-time, .fc-event-title {
-        padding: 0 1px;
-        white-space: normal;
-    }
-}
-
 /* Dropdown Menu Styling */
 /* Juliette */
 .dropMenu {
@@ -137,6 +128,15 @@ section {
 .dropMenu > div {
     margin-right: 10px;
     width: 18vw;
+}
+
+/* Text Wrap for Large Screen Events */
+/* Juliette */
+@media (min-width: 768px) {
+    .fc-event-time, .fc-event-title {
+        padding: 0 1px;
+        white-space: normal;
+    }
 }
 
 /* Dropdown Menu Mobile Styling */
