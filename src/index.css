@@ -12,7 +12,7 @@ header {
     align-items: center;
     background: url("../public/images/CurtainCallBackground.jpg") rgba(182, 67, 62, 0.8);
     background-blend-mode: multiply;
-    background-size: cover;
+    background-size: 1500px;
     height: 200px;
     background-position: 30% 45%;
     padding: 0 25px;
@@ -84,7 +84,7 @@ section {
         background: #CFB034;
         font-size: 1.2em;
         font-style: normal;
-        padding: .5em;
+        padding: 10px;
     }
 
     #hamburger-items {
@@ -323,14 +323,13 @@ main {
 /* EVENT PAGE */
 /* Salley */
 .event-page-card {
-    width: 22em;
+    width: 25em;
     background-color: #fff;
     border-radius: 0.5em;
     overflow: hidden;
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0);
     margin: 2.6em;
     display: inline-block;
-    align-items: center;
 }
 
 .event-page-card img {
@@ -685,6 +684,8 @@ main {
     font-size: 0.85em;
 }
 
+/* saved events section of profile */
+/* salley */
 .profile-container {
     display: flex;
     flex-direction: column;
@@ -694,9 +695,10 @@ main {
 }
 
 .profile-container h1 {
-    font-size: 2.3em;
+    font-size: 2.5em;
     color: white;
-    margin: 0.5em;
+    margin-top: .5em;
+    margin-bottom: .5em;
 }
 
 .profile-page-card {
@@ -716,7 +718,11 @@ main {
 }
 
 .saved-events h2 {
-    font-size: 2em;
+    font-size: 2.5em;
+    color: white;
+}
+
+#calendar h1 {
     color: white;
 }
 
@@ -787,10 +793,6 @@ main {
         font-size: 1em;
     }
 
-    .event-page-card {
-        width: 25em;
-    }
-
     .name-theater-section h2 {
         font-size: 5em;
     }
@@ -851,18 +853,19 @@ main {
 /* FORM */
 /* Jason */
 main section.form {
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
 }
 
 main section.form h1 {
-    margin-top: 100px;
-    font-size: 50px;
+    margin-top: 50px;
+    font-size: 38px;
     color: white;
 }
 
 main section.form h2 {
     font-size: 28px;
+    text-align: center;
 }
 
 main form section.part input {
@@ -873,15 +876,20 @@ main form section.part input {
 main section.form #com {
     color: white;
     padding-bottom: 1.5em;
+    text-align: center;
 }
 
 main form section.part {
     flex: 0 0 250px;
     background-color: white;
-    margin-bottom: 2rem;
-    border-radius: 100px;
+    margin-bottom: 4rem;
     box-shadow: 5px 5px 8px rgba(116, 3, 3, 0.16), 0 1px 3px rgba(163, 9, 9, 0.23);
     padding-top: 0.5em;
+    text-align: left;
+}
+
+main form section.part input#type {
+    width: 300px;
 }
 
 main form section.part input#intro {
@@ -909,9 +917,11 @@ main button {
     background-color: #CFB034;
     color: black;
     padding: 10px 20px;
+    font-size: 15px;
     border: none;
     cursor: pointer;
     border-radius: 10px;
+    margin-bottom: 40px;
 }
 
 /* Jason */
@@ -920,6 +930,10 @@ main button {
     main section.form {
         font-size: 25px;
         text-align: center;
+    }
+
+    main section.form h1 {
+        font-size: 50px;
     }
 
     main section.part h2 {
@@ -931,8 +945,8 @@ main button {
         flex: 0 0 250px;
         background-color: white;
         margin-bottom: 2rem;
-        border-radius: 100px;
         box-shadow: 0 1px 3px rgba(77, 5, 5, 0.16), 0 1px 3px rgba(70, 5, 5, 0.23);
+        text-align: center;
     }
 
     main form section.part input {
@@ -959,5 +973,10 @@ main button {
 
     main form section.part p {
         margin: 20px;
+    }
+
+    main button {
+        font-size: 30px;
+        margin-bottom: 20px;
     }
 }

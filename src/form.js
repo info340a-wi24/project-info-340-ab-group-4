@@ -128,13 +128,12 @@ function Form(){
                         
                         <div>
                             <p><label>Description: </label> 
-                            <input id="des" className="form-control" value={description} onChange={vl => setDescription(vl.target.value)} placeholder="A overview of this event"/></p>
+                            <input id="des" className="form-control" value={description} onChange={vl => setDescription(vl.target.value)} placeholder=" An overview of this event"/></p>
                         </div>
 
                         <div>
-                            <p style={{ color: "#B6433E" }} >Please type "Play", "Musical", "Cabaret", "Concert", "Dance" or "Other".</p>
                             <p><label>Performance Type: </label> 
-                            <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)}/>
+                            <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)} placeholder=" Play, Musical, Cabaret, Concert, Dance or Other"/>
                             {showWarning && !types.includes(type) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above, Note the capitalization</div>}</p>
                         </div>
 
@@ -152,16 +151,14 @@ function Form(){
                         </div>
 
                         <div>
-                            <p style={{ color: "#B6433E" }}>Please type "small", "medium", or "large".</p>
                             <p><label>Audience Size: </label> 
-                            <input id="size" className="form-control" value={size} onChange={vl => setSize(vl.target.value)}/>
+                            <input id="size" className="form-control" value={size} onChange={vl => setSize(vl.target.value)} placeholder=" 0-50, 50-200, or 200+"/>
                             {showWarning && !people.includes(size) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
                         </div>
 
                         <div>
-                            <p style={{ color: "#B6433E" }} >Please type "$", "$$", "$$$".</p>
                             <p><label>Ticket Price: </label> 
-                            <input id="price" className="form-control" value={price} onChange={vl => setPrice(vl.target.value)}/>
+                            <input id="price" className="form-control" value={price} onChange={vl => setPrice(vl.target.value)} placeholder=" $, $$, or $$$"/>
                             {showWarning && !money.includes(price) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
                         </div>
 
@@ -181,7 +178,7 @@ function Form(){
                         <h2 className="F2">Contact Information</h2>
                         <div>
                             <p><label>Email: </label>
-                            <input id="email_input" className="form-control" type="email" value={email} onChange={vl => setEmail(vl.target.value)} placeholder="email@domain.com" name="email"/></p>
+                            <input id="email_input" className="form-control" type="email" value={email} onChange={vl => setEmail(vl.target.value)} placeholder=" email@domain.com" name="email"/></p>
                         </div>
 
                         <div>
@@ -212,7 +209,7 @@ function Form(){
                     <h2 className="F4">Additional Information</h2>
                         <div>
                             <p><label>Official Ticket Link: </label> 
-                            <input id="tkURL" className="form-control" value={tkurl} onChange={vl => setTkurl(vl.target.value)} placeholder="URL"/></p>
+                            <input id="tkURL" className="form-control" value={tkurl} onChange={vl => setTkurl(vl.target.value)} placeholder=" URL"/></p>
                         </div>
 
                         <div>
@@ -227,7 +224,7 @@ function Form(){
 
                         <div>
                             <p><label>Review 1: </label> 
-                            <input id="review1" className="form-control" value={review1} onChange={vl => setReview1(vl.target.value)} placeholder="Any comments?"/></p>
+                            <input id="review1" className="form-control" value={review1} onChange={vl => setReview1(vl.target.value)} placeholder=" Any comments?"/></p>
                         </div>
 
                         <div>
@@ -237,7 +234,7 @@ function Form(){
 
                         <div>
                             <p><label>Additional Info: </label> 
-                            <input id="addinfo" className="form-control" value={addinfo} onChange={vl => setAddinfo(vl.target.value)} placeholder="More Information"/></p>
+                            <input id="addinfo" className="form-control" value={addinfo} onChange={vl => setAddinfo(vl.target.value)} placeholder=" More Information"/></p>
                         </div>
 
                     </section>
