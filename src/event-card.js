@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ref, push, get, query, orderByChild } from 'firebase/database';
+import performersData from './performers.json'; 
+
 
 function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, imgCite, reviewOne, reviewTwo, currentUser, saved, sessions }) {
     const [loading, setLoading] = useState(false);
     const [save, setSave] = useState(false);
+    const currentPerformers = performersData.find(perf => perf.eventId === eventId)?.performers || [];
 
     // saves event to firebase
     const saveEvent = () => {
@@ -74,6 +77,17 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
             </div>
         ));
     };
+    const renderPerformers = () => {
+        return currentPerformers.map((performer, index) => (
+            <div className="performer" key={index}>
+                <img src={performer.image} alt={performer.name} style={{width: "100px", height: "100px"}} />
+                <div className="performer-info">
+                    <h4>{performer.name}</h4>
+                    <p>{performer.role}</p>
+                </div>
+            </div>
+        ));
+    };
 
     return (
         <main>
@@ -117,6 +131,12 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
                     </div>
                 </div>
             </div>
+            <div className="performers-section">
+                    <h2>Performers</h2>
+                    <div className="performers-list">
+                        {renderPerformers()}
+                    </div>
+                </div>
         </main>
     );
 }
