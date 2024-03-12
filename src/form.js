@@ -111,9 +111,8 @@ function Form(){
         <main>
             <section className="form">
                 
-
                 <h1>{submissionMessage || 'Shine on Our Stage'}</h1>
-                <p id="com">{"Save the event to the calendar!"}</p>
+                <p id="com">{"Submit an event to our calendar!"}</p>
 
         
                 <form onSubmit={subm}>

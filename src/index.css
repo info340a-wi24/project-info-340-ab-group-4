@@ -12,7 +12,7 @@ header {
     align-items: center;
     background: url("../public/images/CurtainCallBackground.jpg") rgba(182, 67, 62, 0.8);
     background-blend-mode: multiply;
-    background-size: 1500px;
+    background-size: cover;
     height: 200px;
     background-position: 30% 45%;
     padding: 0 25px;
@@ -84,7 +84,7 @@ section {
         background: #CFB034;
         font-size: 1.2em;
         font-style: normal;
-        padding: 10px;
+        padding: .5em;
     }
 
     #hamburger-items {
@@ -323,13 +323,14 @@ main {
 /* EVENT PAGE */
 /* Salley */
 .event-page-card {
-    width: 25em;
+    width: 22em;
     background-color: #fff;
     border-radius: 0.5em;
     overflow: hidden;
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0);
     margin: 2.6em;
     display: inline-block;
+    align-items: center;
 }
 
 .event-page-card img {
@@ -684,8 +685,6 @@ main {
     font-size: 0.85em;
 }
 
-/* saved events section of profile */
-/* salley */
 .profile-container {
     display: flex;
     flex-direction: column;
@@ -695,10 +694,9 @@ main {
 }
 
 .profile-container h1 {
-    font-size: 2.5em;
+    font-size: 2.3em;
     color: white;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin: 0.5em;
 }
 
 .profile-page-card {
@@ -718,7 +716,7 @@ main {
 }
 
 .saved-events h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     color: white;
 }
 
@@ -787,6 +785,10 @@ main {
         margin-top: 3em;
         width: 5em;
         font-size: 1em;
+    }
+
+    .event-page-card {
+        width: 25em;
     }
 
     .name-theater-section h2 {
@@ -861,7 +863,6 @@ main section.form h1 {
 
 main section.form h2 {
     font-size: 28px;
-
 }
 
 main form section.part input {
