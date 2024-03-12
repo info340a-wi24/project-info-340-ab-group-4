@@ -33,7 +33,7 @@ function Form(){
     const [submissionMessage, setSubmissionMessage] = useState('');
     
     const types = ["Play", "Musical", "Cabaret", "Concert", "Dance", "Other"];
-    const people = ["small", "medium", "large"];
+    const people = ["0-50", "50-200", "200+"];
     const money = ["$", "$$", "$$$"];
 
     const valid = () => {
@@ -153,14 +153,14 @@ function Form(){
 
                         <div>
                             <p style={{ color: "#B6433E" }}>Please type "small", "medium", or "large".</p>
-                            <p><label>Audience size: </label> 
+                            <p><label>Audience Size: </label> 
                             <input id="size" className="form-control" value={size} onChange={vl => setSize(vl.target.value)}/>
                             {showWarning && !people.includes(size) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
                         </div>
 
                         <div>
                             <p style={{ color: "#B6433E" }} >Please type "$", "$$", "$$$".</p>
-                            <p><label>Ticket price: </label> 
+                            <p><label>Ticket Price: </label> 
                             <input id="price" className="form-control" value={price} onChange={vl => setPrice(vl.target.value)}/>
                             {showWarning && !money.includes(price) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
                         </div>
@@ -185,12 +185,12 @@ function Form(){
                         </div>
 
                         <div>
-                            <p><label>phone number: </label> 
+                            <p><label>Phone Number: </label> 
                             <input id="phone_input" className="form-control" value={phonum} onChange={vl => setPhonum(vl.target.value)}/></p>
                         </div>
 
                         <div>
-                            <p><label>organizer: </label>
+                            <p><label>Organizer: </label>
                             <input id="officeURL" className="form-control" value={orgurl} onChange={vl => setOrgurl(vl.target.value)}/></p>
                         </div>
                     </section>
@@ -221,7 +221,7 @@ function Form(){
                         </div>
 
                         <div>
-                            <p><label>Poster description: </label> 
+                            <p><label>Poster Description: </label> 
                             <input id="medialink" className="form-control" value={media} onChange={vl => setMedia(vl.target.value)}/></p>
                         </div>
 

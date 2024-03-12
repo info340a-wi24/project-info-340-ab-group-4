@@ -87,9 +87,9 @@ function Calendar({ eventsDatabase }) {
 
     const sizes = [
         { label: 'All Audience Sizes', value: 'all' },
-        { label: '0 - 50', value: 'small' },
-        { label: '50 - 200', value: 'medium' },
-        { label: '200+', value: 'large' },
+        { label: '0-50', value: '0-50' },
+        { label: '50-200', value: '50-200' },
+        { label: '200+', value: '200+' },
     ];
 
     const costs = [
