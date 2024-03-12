@@ -42,6 +42,10 @@ section {
     text-align: right;
 }
 
+#hamburger-nav label:hover {
+    cursor: pointer;
+}
+
 #hamburger-nav label,
 #hamburger {
     display: none;
