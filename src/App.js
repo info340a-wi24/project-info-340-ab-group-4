@@ -16,11 +16,15 @@ import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { firebaseConfig } from './Config';
 import { getDatabase } from 'firebase/database';
+import performersData from './performers.json';
+
+
 
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const saved = getDatabase(app);
+
 
 function App() {
     const firstFourEvents = eventsData.slice(0, 4);
@@ -46,6 +50,15 @@ function App() {
     const handleInput = (event) => {
         setSearch(event.target.value);
     };
+    const getPerformersForEvent = (eventId) => {
+        const performers = performersData.find(perf => perf.eventId === eventId)?.performers || [];
+        console.log(`Event ID: ${eventId}, Performers:`, performers); 
+        return performers;
+      };
+      
+      
+      
+      
 
     return (
         
@@ -76,6 +89,10 @@ function App() {
                                     alt={event.alt}
                                     eventName={event.eventName}
                                     condensedDescription={event.condensedDescription}
+                                    {...event}
+                                    performers={getPerformersForEvent(event.eventId)}
+                                    currentUser={currentUser}
+                                    saved={saved}
                                 />
                             ))}
                         </main>
@@ -112,6 +129,8 @@ function App() {
                     <Route key={index} path={`/events/${event.eventId}`} element={<EventCard {...event} currentUser={currentUser} saved={saved}/>} />
                 ))}
                 <Route path="*" element={<ErrorPage />} />
+                
+
             </Routes>
             <Footer />
         </BrowserRouter>

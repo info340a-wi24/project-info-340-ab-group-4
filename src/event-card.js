@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ref, push, get, query, orderByChild } from 'firebase/database';
-import performersData from './performers.json'; 
 
 
-function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, imgCite, reviewOne, reviewTwo, currentUser, saved, sessions }) {
+function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, imgCite, reviewOne, reviewTwo, currentUser, saved, sessions, performers }) {
     const [loading, setLoading] = useState(false);
     const [save, setSave] = useState(false);
-    const currentPerformers = performersData.find(perf => perf.eventId === eventId)?.performers || [];
+    console.log(`Performers in EventCard for ${eventId}:`, performers);
 
     // saves event to firebase
     const saveEvent = () => {
@@ -78,16 +77,21 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
         ));
     };
     const renderPerformers = () => {
-        return currentPerformers.map((performer, index) => (
-            <div className="performer" key={index}>
-                <img src={performer.image} alt={performer.name} style={{width: "100px", height: "100px"}} />
-                <div className="performer-info">
-                    <h4>{performer.name}</h4>
-                    <p>{performer.role}</p>
-                </div>
-            </div>
+        console.log(performers);
+        console.log('Performers:', performers); 
+
+        if (!performers || performers.length === 0) {
+            return <p>No performers listed for this event.</p>;
+        }
+        return performers.map((performers, index) => (
+            <li key={index}>
+                <img src={performers.image} alt={performers.name} style={{ width: "50px", height: "50px", marginRight: "10px" }} />
+                <strong>{performers.name}</strong> - {performers.role}
+            </li>
         ));
     };
+    
+    
 
     return (
         <main>
@@ -130,13 +134,12 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div className="performers-section">
+                <div className="performers-section">
                     <h2>Performers</h2>
-                    <div className="performers-list">
-                        {renderPerformers()}
-                    </div>
+                    <ul>{renderPerformers()}</ul>
                 </div>
+            </div>
+            
         </main>
     );
 }
