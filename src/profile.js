@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { signOut, getAuth, updateProfile, updatePassword } from 'firebase/auth';
+import { signOut, getAuth, updateProfile } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from './Config';
 import { getDatabase, ref, onValue } from 'firebase/database';
@@ -10,7 +10,7 @@ const auth = getAuth(app);
 const saved = getDatabase(app);
 function Profile() {
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  // const [password, setPassword] = useState('');
   const [savedEvents, setSavedEvents] = useState([]);
 
   // fetch saved events data from firebase db called saved-events
@@ -39,7 +39,7 @@ function Profile() {
 
   // changing username and password
   const handleUsernameChange = (event) => setUsername(event.target.value);
-  const handlePasswordChange = (event) => setPassword(event.target.value);
+  // const handlePasswordChange = (event) => setPassword(event.target.value);
 
   // submitting changes to username and password
   const handleSubmit = async (event) => {
@@ -48,12 +48,12 @@ function Profile() {
       // update username
       await updateProfile(auth.currentUser, { displayName: username });
       // update password
-      if (password) {
-        await updatePassword(auth.currentUser, password);
-      }
+      // if (password) {
+      //   await updatePassword(auth.currentUser, password);
+      // }
       setUsername('');
-      setPassword('');
-      console.log('Profile Updated', { username, password });
+      // setPassword('');
+      console.log('Profile Updated', { username });
       alert('Changes saved successfully!');
       // reload after updating username so it displays in the welcome message
       window.location.reload();
@@ -83,10 +83,10 @@ function Profile() {
               <label htmlFor="username">Username:</label>
               <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} /><br />
             </div>
-            <div className="form-group">
+            {/* <div className="form-group">
               <label htmlFor="name">Password:</label>
               <input type="text" id="password" name="password" value={password} onChange={handlePasswordChange} /><br />
-            </div>
+            </div> */}
             <div className="form-actions">
               <button type="submit">Save Changes</button>
               <button type="button" onClick={handleSignOut}>Sign Out</button>

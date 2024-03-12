@@ -33,6 +33,6 @@ Our project includes the following features:
 ### 4. Profile 
 
 * Once logged in, can see their username in the "Welcome back, {username}" text at the top
-* Can change Username and Password in Account Settings
+* Can change Username in Account Settings
 * After changing Username, the page will automatically reload and the "Welcome back, {username} will display the user's updated username 
 
