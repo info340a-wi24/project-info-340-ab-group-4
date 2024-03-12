@@ -6,6 +6,7 @@ import HomePage from './home-page';
 import EventCard from './event-card';
 import eventsData from './events-data.json';
 import EventPage from './event-page';
+import EventPageRoute from './event-page-route';
 import Calendar from './calendar';
 import Form from './form';
 import Profile from './profile';
@@ -52,7 +53,7 @@ function App() {
             <Header />
             <Routes>
                 {/* EVENT CARD */}
-                <Route path="/events/:eventId" element={<EventPage />} />
+                <Route path="/events/:eventId" element={<EventPageRoute />} />
                 {/* EVENTS PAGE */}
                 <Route path="/events" element={(
                     <div>

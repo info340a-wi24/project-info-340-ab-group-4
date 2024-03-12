@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ref, push, getDatabase, set } from 'firebase/database';
 import './index.css';
 
+
 function Form(){
     const [eventName, setEventName] = useState('');
     const [description, setDescription] = useState('');
@@ -106,8 +107,6 @@ function Form(){
         }
     };
 
-    //size === ''   price === ''
-
     return(
         <main>
             <section className="form">
@@ -136,7 +135,7 @@ function Form(){
                         <div>
                             <p style={{ color: "#B6433E" }} id='note' >Please type "Play", "Musical", "Cabaret", "Concert", "Dance" or "Other".</p>
                             <p><label>Performance Type: </label> 
-                            <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)} placeholder="(e.g., dance, theater)."/>
+                            <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)}/>
                             {showWarning && !types.includes(type) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above, Note the capitalization</div>}</p>
                         </div>
 
