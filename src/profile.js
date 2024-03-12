@@ -10,8 +10,14 @@ const auth = getAuth(app);
 const saved = getDatabase(app);
 function Profile() {
   const [username, setUsername] = useState('');
-  // const [password, setPassword] = useState('');
   const [savedEvents, setSavedEvents] = useState([]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
 
   // fetch saved events data from firebase db called saved-events
   useEffect(() => {
@@ -39,7 +45,6 @@ function Profile() {
 
   // changing username and password
   const handleUsernameChange = (event) => setUsername(event.target.value);
-  // const handlePasswordChange = (event) => setPassword(event.target.value);
 
   // submitting changes to username and password
   const handleSubmit = async (event) => {
@@ -47,12 +52,7 @@ function Profile() {
     try {
       // update username
       await updateProfile(auth.currentUser, { displayName: username });
-      // update password
-      // if (password) {
-      //   await updatePassword(auth.currentUser, password);
-      // }
       setUsername('');
-      // setPassword('');
       console.log('Profile Updated', { username });
       alert('Changes saved successfully!');
       // reload after updating username so it displays in the welcome message
@@ -72,6 +72,17 @@ function Profile() {
     }
   }
 
+  // maps saved events to list items
+  const renderedSavedEvents = savedEvents.map((event, index) => (
+    <li key={index} className="profile-page-card">
+      <img src={event.image} alt={event.alt} />
+      <div className="card-content">
+        <h3>{event.eventName}</h3>
+        <Link to={`/events/${event.eventId}`} className="btn" onClick={scrollToTop} alt={`Link to ${event.eventName} event page`}>Event Details</Link>
+      </div>
+    </li>
+  ));
+
   return (
     <main>
       <div className="profile-container">
@@ -83,30 +94,17 @@ function Profile() {
               <label htmlFor="username">Username:</label>
               <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} autoComplete="username" /><br />
             </div>
-            {/* <div className="form-group">
-              <label htmlFor="name">Password:</label>
-              <input type="text" id="password" name="password" value={password} onChange={handlePasswordChange} /><br />
-            </div> */}
             <div className="form-actions">
               <button type="submit">Save Changes</button>
               <button type="button" onClick={handleSignOut}>Sign Out</button>
             </div>
           </form>
         </div>
-
         {/* renders saved events list */}
         <div className="saved-events">
           <h2>Saved Events</h2>
           <ul className="event-list">
-            {savedEvents.map((event, index) => (
-              <li key={index} className="profile-page-card">
-                <img src={event.image} alt={event.alt} />
-                <div className="card-content">
-                  <h3>{event.eventName}</h3>
-                  <Link to={`/events/${event.eventId}`} className="btn" alt={`Link to ${event.eventName} event page`}>Event Details</Link>
-                </div>
-              </li>
-            ))}
+            {renderedSavedEvents}
           </ul>
         </div>
       </div>

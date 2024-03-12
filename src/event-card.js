@@ -61,37 +61,36 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
             });
     };
 
-    // Function to render each session's times and dates dynamically
+    // render each session's times and dates dynamically
     const renderSessions = () => {
-        return sessions.map((session, index) => (
+        const sessionElements = sessions.map((session, index) => (
             <div className="date-time" key={index}>
                 <h4>{session.date}</h4>
                 <ul>
                     {session.times.map((time, timeIndex) => (
                         <li key={timeIndex}>
-                            {time} <Link to={link} className="buy-ticket">{loading ? 'Loading...' : 'Available'}</Link>
+                            {time} <Link to={link} className="buy-ticket" onClick={() => setLoading(true)}>{loading ? 'Loading...' : 'Available'}</Link>
                         </li>
                     ))}
                 </ul>
             </div>
         ));
+        return sessionElements;
     };
-    const renderPerformers = () => {
-        console.log(performers);
-        console.log('Performers:', performers); 
 
+    const renderPerformers = () => {
         if (!performers || performers.length === 0) {
             return <p>No performers listed for this event.</p>;
         }
-        return performers.map((performers, index) => (
+    
+        const performerElements = performers.map((performer, index) => (
             <li key={index}>
-                <img src={performers.image} alt={performers.name} style={{ width: "50px", height: "50px", marginRight: "10px" }} />
-                <strong>{performers.name}</strong> - {performers.role}
+                <img src={performer.image} alt={performer.name} style={{ width: "50px", height: "50px", marginRight: "10px" }} />
+                <strong>{performer.name}</strong> - {performer.role}
             </li>
         ));
+        return <ul>{performerElements}</ul>;
     };
-    
-    
 
     return (
         <main>

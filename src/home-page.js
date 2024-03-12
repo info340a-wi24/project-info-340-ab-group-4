@@ -10,23 +10,26 @@ function HomePage({ events }) {
 
     };
 
+    // maps events to carousel slides
+    const carouselSlides = events.map((event, index) => (
+        <div key={index} className="carousel-slide">
+            <div className="carousel-image">
+                <img src={event.image} alt={event.alt} />
+            </div>
+            <div className="carousel-legend">
+                <h3>{event.eventName}</h3>
+                <p>{event.condensedDescription}</p>
+                <Link to={`/events/${event.eventId}`} className="btn" onClick={scrollToTop}>Event Details</Link>
+            </div>
+        </div>
+    ));
+
     return (
         <div className="carousel-container">
             <h1>Welcome to Seattle Curtain Call!</h1>
             <h2>Featured Events</h2>
             <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false} useKeyboardArrows className="presentation-mode">
-                {events.map((event, index) => (
-                    <div key={index} className="carousel-slide">
-                        <div className="carousel-image">
-                            <img src={event.image} alt={event.alt} />
-                        </div>
-                        <div className="carousel-legend">
-                            <h3>{event.eventName}</h3>
-                            <p>{event.condensedDescription}</p>
-                            <Link to={`/events/${event.eventId}`} className="btn" onClick={scrollToTop}>Event Details</Link>
-                        </div>
-                    </div>
-                ))}
+                {carouselSlides}
             </Carousel>
         </div>
     );
