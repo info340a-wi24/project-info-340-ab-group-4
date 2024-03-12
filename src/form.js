@@ -44,6 +44,7 @@ function Form(){
             tpRef.current?.scrollIntoView();
             return false;
         }
+        setShowWarning(false);
         return true;
     };
 
