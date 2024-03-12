@@ -181,17 +181,17 @@ function Form(){
                     <section className="part">
                         <h2 className="F2">Contact Information</h2>
                         <div>
-                            <p><label for="email_input">Email: </label>
+                            <p><label>Email: </label>
                             <input id="email_input" className="form-control" type="email" value={email} onChange={vl => setEmail(vl.target.value)} placeholder="email@domain.com" name="email"/></p>
                         </div>
 
                         <div>
-                            <p><label for="phone_number">phone number: </label> 
+                            <p><label>phone number: </label> 
                             <input id="phone_input" className="form-control" value={phonum} onChange={vl => setPhonum(vl.target.value)}/></p>
                         </div>
 
                         <div>
-                            <p><label for="organizerURL">organizer: </label>
+                            <p><label>organizer: </label>
                             <input id="officeURL" className="form-control" value={orgurl} onChange={vl => setOrgurl(vl.target.value)}/></p>
                         </div>
                     </section>
@@ -212,32 +212,32 @@ function Form(){
                     <section className="part">
                     <h2 className="F4">Additional Information</h2>
                         <div>
-                            <p><label for="OfficialTicketLink">Official Ticket Link: </label> 
+                            <p><label>Official Ticket Link: </label> 
                             <input id="tkURL" className="form-control" value={tkurl} onChange={vl => setTkurl(vl.target.value)} placeholder="URL"/></p>
                         </div>
 
                         <div>
-                            <p><label for="Poster/Image">Poster: </label> 
+                            <p><label>Poster: </label> 
                             <input id="poster" type="file" accept="image/*" className="form-control" value={poster} onChange={vl => setPoster(vl.target.value)}/></p>
                         </div>
 
                         <div>
-                            <p><label for="SocialMedia">Poster description: </label> 
+                            <p><label>Poster description: </label> 
                             <input id="medialink" className="form-control" value={media} onChange={vl => setMedia(vl.target.value)}/></p>
                         </div>
 
                         <div>
-                            <p><label for="notes">Review 1: </label> 
+                            <p><label>Review 1: </label> 
                             <input id="review1" className="form-control" value={review1} onChange={vl => setReview1(vl.target.value)} placeholder="Any comments?"/></p>
                         </div>
 
                         <div>
-                            <p><label for="notes">Review 2: </label> 
+                            <p><label>Review 2: </label> 
                             <input id="review2" className="form-control" value={review2} onChange={vl => setReview2(vl.target.value)}/></p>
                         </div>
 
                         <div>
-                            <p><label for="notes">Additional Info: </label> 
+                            <p><label>Additional Info: </label> 
                             <input id="addinfo" className="form-control" value={addinfo} onChange={vl => setAddinfo(vl.target.value)} placeholder="More Information"/></p>
                         </div>
 
