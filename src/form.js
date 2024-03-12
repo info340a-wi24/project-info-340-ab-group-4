@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef} from 'react';
 import { ref, push, getDatabase } from 'firebase/database';
 import './index.css';
 
@@ -31,15 +31,17 @@ function Form(){
 
     const [showWarning, setShowWarning] = useState(false);
     const [submissionMessage, setSubmissionMessage] = useState('');
+
+    const tpRef = useRef(null);
     
     const types = ["Play", "Musical", "Cabaret", "Concert", "Dance", "Other"];
     const people = ["0-50", "50-200", "200+"];
     const money = ["$", "$$", "$$$"];
 
     const valid = () => {
-        if (eventName === '' || startDate === '' || endDate === '') {
+        if (eventName === '' || startDate === '' || endDate === '' || !types.includes(type) || !people.includes(size) || !money.includes(price)) {
             setShowWarning(true);
-            document.getElementById('name').scrollIntoView();
+            tpRef.current?.scrollIntoView();
             return false;
         }
         return true;
@@ -121,7 +123,7 @@ function Form(){
 
                         <div>
                             <p><label>Event Name: </label>
-                            <input id="name" className="form-control" value={eventName} onChange={vl => setEventName(vl.target.value)} />
+                            <input id="name" className="form-control" value={eventName} ref={tpRef} onChange={vl => setEventName(vl.target.value)} />
                             {showWarning && eventName === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
                         </div>
 
@@ -134,7 +136,7 @@ function Form(){
                         <div>
                             <p><label>Performance Type: </label> 
                             <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)} placeholder=" Play, Musical, Cabaret, Concert, Dance or Other"/>
-                            {showWarning && !types.includes(type) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above, Note the capitalization</div>}</p>
+                            {showWarning && !types.includes(type) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes in input box, Note the capitalization</div>}</p>
                         </div>
 
                         
@@ -153,13 +155,13 @@ function Form(){
                         <div>
                             <p><label>Audience Size: </label> 
                             <input id="size" className="form-control" value={size} onChange={vl => setSize(vl.target.value)} placeholder=" 0-50, 50-200, or 200+"/>
-                            {showWarning && !people.includes(size) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
+                            {showWarning && !people.includes(size) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes in input box</div>}</p>
                         </div>
 
                         <div>
                             <p><label>Ticket Price: </label> 
                             <input id="price" className="form-control" value={price} onChange={vl => setPrice(vl.target.value)} placeholder=" $, $$, or $$$"/>
-                            {showWarning && !money.includes(price) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
+                            {showWarning && !money.includes(price) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes in input box</div>}</p>
                         </div>
 
                         <div>

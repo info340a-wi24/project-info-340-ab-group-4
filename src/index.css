@@ -885,7 +885,6 @@ main form section.part {
     margin-bottom: 4rem;
     box-shadow: 5px 5px 8px rgba(116, 3, 3, 0.16), 0 1px 3px rgba(163, 9, 9, 0.23);
     padding-top: 0.5em;
-    text-align: left;
 }
 
 main form section.part input#type {
