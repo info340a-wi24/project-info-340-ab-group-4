@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { ref, push, getDatabase, set } from 'firebase/database';
+import './index.css';
 
 function Form(){
     const [eventName, setEventName] = useState('');
@@ -31,6 +32,8 @@ function Form(){
     const [submissionMessage, setSubmissionMessage] = useState('');
     
     const types = ["Play", "Musical", "Cabaret", "Concert", "Dance", "Other"];
+    const people = ["small", "medium", "large"];
+    const money = ["$", "$$", "$$$"];
 
     const valid = () => {
         if (eventName === '' || startDate === '' || endDate === '') {
@@ -103,6 +106,8 @@ function Form(){
         }
     };
 
+    //size === ''   price === ''
+
     return(
         <main>
             <section className="form">
@@ -129,10 +134,10 @@ function Form(){
                         </div>
 
                         <div>
-                            <p style={{ color: "#B6433E" }}>Please type "Play", "Musical", "Cabaret", "Concert", "Dance" or "Other".</p>
+                            <p style={{ color: "#B6433E" }} id='note' >Please type "Play", "Musical", "Cabaret", "Concert", "Dance" or "Other".</p>
                             <p><label>Performance Type: </label> 
-                            <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)} placeholder="(e.g., dance, theater)."/></p>
-                            {showWarning && !types.includes(type) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}
+                            <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)} placeholder="(e.g., dance, theater)."/>
+                            {showWarning && !types.includes(type) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above, Note the capitalization</div>}</p>
                         </div>
 
                         
@@ -149,17 +154,17 @@ function Form(){
                         </div>
 
                         <div>
-                            <p style={{ color: "#B6433E" }}>Please type "small", "medium", or "large".</p>
+                            <p style={{ color: "#B6433E" }} id='note'>Please type "small", "medium", or "large".</p>
                             <p><label>Audience size: </label> 
                             <input id="tsize" className="form-control" value={size} onChange={vl => setSize(vl.target.value)}/>
-                            {showWarning && size === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
+                            {showWarning && !people.includes(size) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
                         </div>
 
                         <div>
-                            <p style={{ color: "#B6433E" }}>Please type "$", "$$", "$$$".</p>
+                            <p style={{ color: "#B6433E" }} id='note' >Please type "$", "$$", "$$$".</p>
                             <p><label>Ticket price: </label> 
                             <input id="tsize" className="form-control" value={price} onChange={vl => setPrice(vl.target.value)}/>
-                            {showWarning && price === '' && <div style={{ color: 'red' }} className="warning">This field cannot be empty</div>}</p>
+                            {showWarning && !money.includes(price) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
                         </div>
 
                         <div>

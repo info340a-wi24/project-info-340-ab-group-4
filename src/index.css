@@ -828,8 +828,13 @@ main section.form h1 {
 }
 
 main section.form h2 {
-    font-size: 23px;
+    font-size: 28px;
 
+}
+
+main form section.part input {
+    height: 28px;
+    border-radius: 10px;
 }
 
 main section.form #com {
@@ -851,7 +856,7 @@ main form section.part input#intro {
     margin-bottom: 25px;
 }
 
-main form section.part input#loca_input {
+main form section.part input#address_input {
     margin-bottom: 25px;
 }
 
@@ -879,12 +884,12 @@ main button {
 @media (min-width: 992px) {
 
     main section.form {
-        font-size: 20px;
+        font-size: 25px;
         text-align: center;
     }
 
-    main h2 {
-        font-size: 40px;
+    main section.part h2 {
+        font-size: 45px;
         padding-top: 0.5em;
     }
 
@@ -896,12 +901,17 @@ main button {
         box-shadow: 0 1px 3px rgba(77, 5, 5, 0.16), 0 1px 3px rgba(70, 5, 5, 0.23);
     }
 
+    main form section.part input {
+        height: 35px;
+        border-radius: 10px;
+    }
+
     main form section.part input#intro {
         width: 250px;
         margin-bottom: 25px;
     }
 
-    main form section.part input#loca_input {
+    main form section.part input#address_input {
         margin-bottom: 25px;
     }
 
