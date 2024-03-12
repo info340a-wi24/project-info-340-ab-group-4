@@ -133,7 +133,7 @@ function Form(){
                         </div>
 
                         <div>
-                            <p style={{ color: "#B6433E" }} id='note' >Please type "Play", "Musical", "Cabaret", "Concert", "Dance" or "Other".</p>
+                            <p style={{ color: "#B6433E" }} >Please type "Play", "Musical", "Cabaret", "Concert", "Dance" or "Other".</p>
                             <p><label>Performance Type: </label> 
                             <input id="type" className="form-control" value={type} onChange={vl => setType(vl.target.value)}/>
                             {showWarning && !types.includes(type) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above, Note the capitalization</div>}</p>
@@ -153,16 +153,16 @@ function Form(){
                         </div>
 
                         <div>
-                            <p style={{ color: "#B6433E" }} id='note'>Please type "small", "medium", or "large".</p>
+                            <p style={{ color: "#B6433E" }}>Please type "small", "medium", or "large".</p>
                             <p><label>Audience size: </label> 
-                            <input id="tsize" className="form-control" value={size} onChange={vl => setSize(vl.target.value)}/>
+                            <input id="size" className="form-control" value={size} onChange={vl => setSize(vl.target.value)}/>
                             {showWarning && !people.includes(size) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
                         </div>
 
                         <div>
-                            <p style={{ color: "#B6433E" }} id='note' >Please type "$", "$$", "$$$".</p>
+                            <p style={{ color: "#B6433E" }} >Please type "$", "$$", "$$$".</p>
                             <p><label>Ticket price: </label> 
-                            <input id="tsize" className="form-control" value={price} onChange={vl => setPrice(vl.target.value)}/>
+                            <input id="price" className="form-control" value={price} onChange={vl => setPrice(vl.target.value)}/>
                             {showWarning && !money.includes(price) && <div style={{ color: 'red' }} className="warning">This field is not valid, see the notes above</div>}</p>
                         </div>
 
