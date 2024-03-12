@@ -36,3 +36,8 @@ Our project includes the following features:
 * Can change Username in Account Settings
 * After changing Username, the page will automatically reload and the "Welcome back, {username} will display the user's updated username 
 
+### 5. Carousel
+* Users can click through events on home page using arrows
+* The carousel will automatically move to another event periodically
+* Infinite loop (will reset to front once it reaches the end)
+

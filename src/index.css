@@ -194,7 +194,6 @@ main {
     height: 100%;
     margin: 2.5em auto;
     /* height: auto; */
-    background-color: #B6433E;
     border-radius: 0.5em;
     overflow: hidden;
 }
@@ -208,7 +207,7 @@ main {
 
 .carousel-container h2 {
     font-size: 2.3em;
-    color: #CFB034;
+    color: white;
     margin-bottom: .5em;
     text-align: center;
 }
@@ -918,6 +917,7 @@ main button {
     border-radius: 10px;
 }
 
+/* Jason */
 @media (min-width: 992px) {
 
     main section.form {
