@@ -45,13 +45,18 @@ function Calendar({ eventsDatabase }) {
         // Initialize Firebase app
         const firebaseApp = initializeApp(firebaseConfig);
         const database = getDatabase(firebaseApp);
-        const eventsRef = ref(database, 'events-data');
+        const eventsRef = ref(database, 'events');
 
         // Listen for changes to events data
         const handleData = (snapshot) => {
             const data = snapshot.val();
             if (data) {
-                setEvents(data);
+                // Convert object keys into an array and map over them to create an array of event objects
+                const eventsArray = Object.keys(data).map(key => ({
+                    id: key, // Assuming each event has a unique ID in Firebase
+                    ...data[key] // Spread the properties of each event
+                }));
+                setEvents(eventsArray);
             }
         };
 
