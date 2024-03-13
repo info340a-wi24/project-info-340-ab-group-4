@@ -15,11 +15,13 @@ const customStyles = {
         backgroundColor: '#B6433E', 
         color: 'white', 
         border: '1px solid black', 
+        cursor: 'pointer',
     }),
     option: (provided, state) => ({
         ...provided,
         backgroundColor: state.isSelected ? '#CFB034' : '#B6433E', 
         color: state.isSelected ? 'black' : 'white', 
+        cursor: 'pointer',
         '&:hover': {
             backgroundColor: '#CFB034',
             color: 'black'
@@ -31,7 +33,7 @@ const customStyles = {
     }),
 };
 
-function Calendar({ eventsDatabase }) {
+function Calendar() {
 
     const [selectedGenre, setSelectedGenre] = useState('all');
     const [selectedSize, setSelectedSize] = useState('all');
@@ -94,9 +96,9 @@ function Calendar({ eventsDatabase }) {
 
     const costs = [
         { label: 'All Pricepoints', value: 'all' },
-        { label: '$', value: 'low' },
-        { label: '$$', value: 'medium' },
-        { label: '$$$', value: 'high' },
+        { label: '$', value: '$' },
+        { label: '$$', value: '$$' },
+        { label: '$$$', value: '$$$' },
     ];
 
     const handleGenreChange = (selectedOption) => {
@@ -124,7 +126,7 @@ function Calendar({ eventsDatabase }) {
 
     const mappedEvents = filteredEvents.map(event => ({
         ...event,
-        title: event.eventName // Rename 'eventName' to 'title'
+        title: event.eventName // Rename 'eventName' to 'title' so FullCalendar understands
     }));
 
 
@@ -137,6 +139,8 @@ function Calendar({ eventsDatabase }) {
                     options={genres}
                     placeholder={genrePlaceholder}
                     styles={customStyles}
+                    aria-label="Select Genre"
+                    style="cursor: pointer;"
                 />
                 <Select 
                     value={selectedSize} 
@@ -144,6 +148,7 @@ function Calendar({ eventsDatabase }) {
                     options={sizes}
                     placeholder={sizePlaceholder}
                     styles={customStyles}
+                    aria-label="Select Audience Size"
                 />
                 <Select 
                     value={selectedCost} 
@@ -151,6 +156,7 @@ function Calendar({ eventsDatabase }) {
                     options={costs}
                     placeholder={costPlaceholder}
                     styles={customStyles}
+                    aria-label="Select Pricepoint"
                 />
             </div> 
             <FullCalendar

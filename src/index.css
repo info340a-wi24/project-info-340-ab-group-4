@@ -109,6 +109,12 @@ section {
     color: #B6433E;
 }
 
+/* Calendar Event Cursor */
+/* Juliette */
+.fc-event{
+    cursor: pointer;
+}
+
 /* Calendar Page Background and Spacing */
 /* Juliette */
 .calPage {
@@ -323,13 +329,14 @@ main {
 /* EVENT PAGE */
 /* Salley */
 .event-page-card {
-    width: 25em;
+    width: 75vw;
     background-color: #fff;
     border-radius: 0.5em;
     overflow: hidden;
     box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0);
     margin: 2.6em;
     display: inline-block;
+    align-content: center;
 }
 
 .event-page-card img {
@@ -366,6 +373,12 @@ main {
     font-size: 0.85em;
     margin-left: 0.5em;
     margin-right: 0.5em;
+}
+
+@media (min-width: 768px) {
+    .event-page-card {
+        width: 25em;
+    }
 }
 
 /* event page search bar */
