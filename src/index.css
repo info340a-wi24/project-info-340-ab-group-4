@@ -97,6 +97,7 @@ section {
     }
 }
 
+/* CALENDAR PAGE */
 /* Calendar Coloring */
 /* Juliette */
 :root {
@@ -158,7 +159,7 @@ section {
     }
 }
 
-/* Error Page Styling */
+/* ERROR PAGE */
 /* Juliette */
 .errorPage {
     text-align: center;
@@ -174,7 +175,7 @@ section {
     margin-bottom: 10vh;
 }
 
-/* HOME PAGE CARDS */
+/* HOME PAGE */
 /* Salley */
 .container {
     max-width: 100%;
@@ -199,7 +200,6 @@ main {
     width: 90%;
     height: 100%;
     margin: 2.5em auto;
-    /* height: auto; */
     border-radius: 0.5em;
     overflow: hidden;
 }
@@ -264,6 +264,43 @@ main {
     text-decoration: none;
 }
 
+@media (min-width: 768px) {
+    .carousel-container {
+        width: 70%;
+    }
+    
+    .carousel-container h1 {
+        font-size: 3.4em;
+    }
+    
+    .carousel-container h2 {
+        font-size: 2.7em;
+    }
+    
+    .carousel-slide {
+        position: relative;
+    }
+    
+    .carousel-image img {
+        height: 40em;
+    }
+    
+    .carousel-legend h3 {
+        font-size: 2em;
+    }
+    
+    .carousel-legend p {
+        font-size: 1.3em;
+    }
+    
+    .carousel-legend .btn {
+        padding: 0.7em 2em;
+        margin-left: .5em;
+        margin-right: .5em;
+        margin-top: 1em;
+        font-size: 1em;
+    }
+}
 
 /* SIGN IN PAGE */
 /* Salley */
@@ -330,6 +367,7 @@ main {
 /* Salley */
 .event-page-card {
     width: 75vw;
+    height: 37em;
     background-color: #fff;
     border-radius: 0.5em;
     overflow: hidden;
@@ -375,12 +413,6 @@ main {
     margin-right: 0.5em;
 }
 
-@media (min-width: 768px) {
-    .event-page-card {
-        width: 25em;
-    }
-}
-
 /* event page search bar */
 /* Salley */
 .search-container {
@@ -417,7 +449,23 @@ main {
     cursor: pointer;
 }
 
-/* EVENT CARD */
+@media (min-width: 768px) {
+    .event-page-card {
+        width: 25em;
+    }
+
+    .search-container .search-bar {
+        width: 28em;
+    }
+    
+    .search-container .search-button {
+        margin-top: 3em;
+        width: 5em;
+        font-size: 1em;
+    }
+}
+
+/* EVENT CARDS */
 /* Salley */
 .event-card-container {
     background-color: #66736C;
@@ -432,7 +480,7 @@ main {
     border-radius: 1em;
 }
 
-/* EVENT AND SCHEDULE */
+/* event and schedule */
 /* Salley */
 .event-schedule-container {
     display: flex;
@@ -545,7 +593,7 @@ main {
     text-decoration: underline;
 }
 
-/* ABOUT THE EVENT AND REVIEWS */
+/* about event & reviews */
 /* Salley */
 .about-review-container {
     display: flex;
@@ -556,8 +604,6 @@ main {
     width: 95%;
 }
 
-/* about section */
-/* Salley */
 .about-section,
 .review-section {
     background-color: #3F4E51;
@@ -582,8 +628,6 @@ main {
     color: lightgray;
 }
 
-/* review section */
-/* Salley */
 .review-section ul li {
     color: lightgray;
     font-size: 1em;
@@ -591,75 +635,58 @@ main {
     border-radius: 0.8em;
 }
 
-/* PERFORMERS */
-/* Salley */
-.performer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 0.5em;
-    margin-top: 0.5em;
-    width: 95%;
-    color: #fff;
-}
+@media (min-width: 768px) {
+    .name-theater-section h2 {
+        font-size: 5em;
+    }
 
-.performer {
-    background-color: #3F4E51;
-    padding: 0.5em;
-    margin-top: 2em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    .name-theater-section h3 {
+        font-size: 3em;
+    }
 
-.performer-container h2 {
-    font-size: 1.8em;
-    color: #CFB034;
-}
+    .event-schedule-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-.performer img {
-    width: 40%;
-    height: 35%;
-    padding: 0.5em;
-    border-radius: 0.5em;
-}
+    .event-card {
+        width: 75%;
+        height: 40%;
+    }
 
-.performer h3,
-.performer h4 {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
+    .schedule {
+        width: 25%;
+    }
 
-.performer p {
-    color: lightgray;
-    padding: 0.5em;
-}
+    .date-time ul li {
+        font-size: 1em;
+        margin-top: .8em;
+        margin-left: 1em;
+    }
 
-.performer .btn {
-    display: inline-block;
-    padding: 0.2em 0.5em;
-    background-color: #ccc;
-    color: #333;
-    text-decoration: none;
-    border-radius: 0.2em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    .about-review-container {
+        flex-direction: row;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .about-section,
+    .review-section {
+        width: 48%;
+    }
 }
 
 /* PROFILE PAGE */
 /* Salley */
+/* account settings */
 .account-settings {
     background-color: #faf7e3;
     border-radius: 1em;
     box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.1);
     padding: 2em;
     width: 85vw;
-    /* adjust if needed to control width of rectangle */
     margin: 2em;
-}
-
-@media (min-width: 768px) {
-    .account-settings {
-        width: 25em;
-    }
 }
 
 .account-settings h2 {
@@ -728,12 +755,6 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
   }
-
-@media (min-width: 768px) {
-    .profile-page-card {
-        width: 22em;
-    }
-}
   
 .profile-page-card img {
     width: 100%;
@@ -747,11 +768,16 @@ main {
     color: white;
 }
 
-#calendar h1 {
-    color: white;
+@media (min-width: 768px) {
+    .profile-page-card {
+        width: 22em;
+    }
+    .account-settings {
+        width: 25em;
+    }
 }
 
-/* Footer CSS */
+/* FOOTER */
 /* Juliette */
 .footer {
     background-color: white;
@@ -767,112 +793,6 @@ main {
 
 .footer a:hover {
     color: #b6443eb0;
-}
-
-/* ADJUSTED FOR MOBILE */
-/* Salley */
-@media (min-width: 768px) {
-    .carousel-container {
-        width: 70%;
-    }
-    
-    .carousel-container h1 {
-        font-size: 3.4em;
-    }
-    
-    .carousel-container h2 {
-        font-size: 2.7em;
-    }
-    
-    .carousel-slide {
-        position: relative;
-    }
-    
-    .carousel-image img {
-        height: 40em;
-    }
-    
-    .carousel-legend h3 {
-        font-size: 2em;
-    }
-    
-    .carousel-legend p {
-        font-size: 1.3em;
-    }
-    
-    .carousel-legend .btn {
-        padding: 0.7em 2em;
-        margin-left: .5em;
-        margin-right: .5em;
-        margin-top: 1em;
-        font-size: 1em;
-    }
-
-    .search-container .search-bar {
-        width: 28em;
-    }
-    
-    .search-container .search-button {
-        margin-top: 3em;
-        width: 5em;
-        font-size: 1em;
-    }
-
-    .name-theater-section h2 {
-        font-size: 5em;
-    }
-
-    .name-theater-section h3 {
-        font-size: 3em;
-    }
-
-    .event-schedule-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .event-card {
-        width: 75%;
-        height: 40%;
-    }
-
-    .schedule {
-        width: 25%;
-    }
-
-    .date-time ul li {
-        font-size: 1em;
-        margin-top: .8em;
-        margin-left: 1em;
-    }
-
-    .about-review-container,
-    .performer-container {
-        flex-direction: row;
-        margin-left: 1em;
-        margin-right: 1em;
-    }
-
-    .about-section,
-    .review-section {
-        width: 48%;
-    }
-
-    .performer {
-        width: 45%;
-        display: flex;
-    }
-
-    .performer-details h3,
-    .performer-details h4 {
-        margin-bottom: 0.5em;
-    }
-
-    .footer-col {
-        width: 25%;
-        padding: 0 1px;
-    }
 }
 
 /* FORM */

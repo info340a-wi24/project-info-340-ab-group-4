@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import { ref, push, get, query, orderByChild } from 'firebase/database';
 
 
-function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, imgCite, reviewOne, reviewTwo, currentUser, saved, sessions, performers }) {
+function EventCard({ eventId, eventName, venue, start, endDate, address, description, link, image, alt, imgCite, reviewOne, reviewTwo, currentUser, saved, sessions }) {
     const [loading, setLoading] = useState(false);
     const [save, setSave] = useState(false);
-    console.log(`Performers in EventCard for ${eventId}:`, performers);
 
     // saves event to firebase
     const saveEvent = () => {
@@ -78,20 +77,6 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
         return sessionElements;
     };
 
-    const renderPerformers = () => {
-        if (!performers || performers.length === 0) {
-            return <p>No performers listed for this event.</p>;
-        }
-    
-        const performerElements = performers.map((performer, index) => (
-            <li key={index}>
-                <img src={performer.image} alt={performer.name} style={{ width: "50px", height: "50px", marginRight: "10px" }} />
-                <strong>{performer.name}</strong> - {performer.role}
-            </li>
-        ));
-        return <ul>{performerElements}</ul>;
-    };
-
     return (
         <main>
             <div className="event-card-container">
@@ -132,10 +117,6 @@ function EventCard({ eventId, eventName, venue, start, endDate, address, descrip
                             <li><p>{reviewTwo}</p></li>
                         </ul>
                     </div>
-                </div>
-                <div className="performers-section">
-                    <h2>Performers</h2>
-                    <ul>{renderPerformers()}</ul>
                 </div>
             </div>
             

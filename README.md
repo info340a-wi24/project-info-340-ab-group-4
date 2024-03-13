@@ -1,8 +1,8 @@
 # Seattle Curtain Call
 
-This project was created by **Juliette Jones**, **Salley Fang**, **Jason Yu**,  and **Chaeri Hong** as their final project proposal for **INFO 340**, Winter 2024.
+This project was created by **Juliette Jones**, **Salley Fang**, **Jason Yu**,  and **Chaeri Hong** as their final project for **INFO 340**, Winter 2024.
 
-**Seattle Curtain Call** showcases a diverse and growing array of local plays, musicals, concerts, adn more, with a focus on smaller, independent events happening around the Seattle area! The website specifically highlights smaller events to encourage locals and tourists to support talented performers and organizations within their community!
+**Seattle Curtain Call** showcases a diverse and growing array of local plays, musicals, concerts, and more, with a focus on smaller, independent events happening around the Seattle area! The website specifically highlights smaller events to encourage locals and tourists to support talented performers and organizations within their community.
 
 ## Features
 

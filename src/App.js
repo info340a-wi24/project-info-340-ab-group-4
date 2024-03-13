@@ -16,7 +16,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { firebaseConfig } from './Config';
 import { getDatabase } from 'firebase/database';
-import performersData from './performers.json';
 
 
 const app = initializeApp(firebaseConfig);
@@ -48,12 +47,6 @@ function App() {
         setSearch(event.target.value);
     };
 
-    const getPerformersForEvent = (eventId) => {
-        const performers = performersData.find(perf => perf.eventId === eventId)?.performers || [];
-        console.log(`Event ID: ${eventId}, Performers:`, performers); 
-        return performers;
-    };
-
     const eventPageRouteComponents = eventsData.map((event, index) => (
         <Route key={index} path={`/events/${event.eventId}`} element={<EventCard {...event} currentUser={currentUser} saved={saved}/>} />
     ));
@@ -68,7 +61,6 @@ function App() {
             eventName={event.eventName}
             condensedDescription={event.condensedDescription}
             {...event}
-            performers={getPerformersForEvent(event.eventId)}
             currentUser={currentUser}
             saved={saved}
         />
