@@ -145,6 +145,7 @@ function Calendar() {
                     placeholder={genrePlaceholder}
                     styles={customStyles}
                     aria-label="Select Genre dropdown"
+                    role="menu"
                 />
                 <Select 
                     value={selectedSize} 
@@ -153,6 +154,7 @@ function Calendar() {
                     placeholder={sizePlaceholder}
                     styles={customStyles}
                     aria-label="Select Audience Size dropdown"
+                    role="menu"
                 />
                 <Select 
                     value={selectedCost} 
@@ -161,6 +163,7 @@ function Calendar() {
                     placeholder={costPlaceholder}
                     styles={customStyles}
                     aria-label="Select Pricepoint dropdown"
+                    role="menu"
                 />
             </div> 
             <FullCalendar
