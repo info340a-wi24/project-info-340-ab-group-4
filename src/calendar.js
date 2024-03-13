@@ -70,7 +70,7 @@ function Calendar() {
     }, []);
 
     const handleEventClick = (info) => {
-        const eventLink = info.event.extendedProps.organizerLink;
+        const eventLink = info.event.extendedProps.TicketLink;
         // Navigate to the event details page
         window.open(eventLink, '_blank');
     };
