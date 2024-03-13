@@ -212,7 +212,7 @@ function Form(){
                     <h2 className="F4">Additional Information</h2>
                         <div>
                             <p><label>Official Ticket Link: </label> 
-                            <input id="tkURL" className="form-control" value={tkurl} onChange={vl => setTkurl(vl.target.value)} placeholder=" URL"/></p>
+                            <input id="tkURL" className="form-control" value={tkurl} onChange={vl => setTkurl(vl.target.value)} placeholder=" https://example.com"/></p>
                         </div>
 
                         <div>
