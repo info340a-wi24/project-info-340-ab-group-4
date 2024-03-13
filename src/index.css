@@ -37,25 +37,25 @@ section {
 
 /* NAV BAR */
 /* Juliette & Salley */
-#hamburger-nav {
+.hamburger-nav {
     width: 100%;
     text-align: right;
 }
 
-#hamburger-nav label:hover {
+.hamburger-nav label:hover {
     cursor: pointer;
 }
 
-#hamburger-nav label,
-#hamburger {
+.hamburger-nav label,
+.hamburger {
     display: none;
 }
 
-#hamburger-items {
+.hamburger-items {
     display: flex;
 }
 
-#hamburger-items a {
+.hamburger-items a {
     padding: 10px;
     color: white;
     text-decoration: none;
@@ -64,20 +64,20 @@ section {
     flex-basis: 0;
 }
 
-#hamburger-items a:hover {
+.hamburger-items a:hover {
     background: #CFB034;
     color: black;
     border-radius: 20px;
 }
 
 @media (max-width: 768px) {
-    #hamburger-items a {
+    .hamburger-items a {
         display: block;
         width: 100%;
         box-sizing: border-box;
     }
 
-    #hamburger-nav label {
+    .hamburger-nav label {
         border-radius: .4em;
         display: inline-block;
         color: white;
@@ -87,11 +87,11 @@ section {
         padding: 10px;
     }
 
-    #hamburger-items {
+    .hamburger-items {
         display: none;
     }
 
-    #hamburger-nav input:checked~#hamburger-items {
+    .hamburger-nav input:checked~.hamburger-items {
         font-size: 10px;
         display: block;
     }

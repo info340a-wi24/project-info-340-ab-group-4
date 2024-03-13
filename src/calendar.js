@@ -8,7 +8,7 @@ import { getDatabase, ref, onValue, off } from 'firebase/database';
 import { firebaseConfig } from './Config';
 import { initializeApp } from 'firebase/app';
 
-
+// Styling for dropdown menus from Select elements
 const customStyles = {
     control: (provided, state) => ({
         ...provided,
@@ -48,23 +48,21 @@ function Calendar() {
         const firebaseApp = initializeApp(firebaseConfig);
         const database = getDatabase(firebaseApp);
         const eventsRef = ref(database, 'events');
-
         // Listen for changes to events data
         const handleData = (snapshot) => {
             const data = snapshot.val();
             if (data) {
-                // Convert object keys into an array and map over them to create an array of event objects
+                // Convert data from database into an array
                 const eventsArray = Object.keys(data).map(key => ({
-                    id: key, // Assuming each event has a unique ID in Firebase
-                    ...data[key] // Spread the properties of each event
+                    id: key, 
+                    ...data[key]
                 }));
+                // Set events variable as array from database
                 setEvents(eventsArray);
             }
         };
-
         // Subscribe to events data
         onValue(eventsRef, handleData);
-
         // Unsubscribe from events data when component unmounts
         return () => {
             off(eventsRef, 'value', handleData);
@@ -77,6 +75,7 @@ function Calendar() {
         window.open(eventLink, '_blank');
     };
     
+    // Array of genres
     const genres = [
         { label: 'All Genres', value: 'all' },
         { label: 'Play', value: 'Play' },
@@ -87,6 +86,7 @@ function Calendar() {
         { label: 'Other', value: 'Other' },
     ];
 
+    // Array of audience sizes
     const sizes = [
         { label: 'All Audience Sizes', value: 'all' },
         { label: '0-50', value: '0-50' },
@@ -94,6 +94,7 @@ function Calendar() {
         { label: '200+', value: '200+' },
     ];
 
+    // Array of pricepoints
     const costs = [
         { label: 'All Pricepoints', value: 'all' },
         { label: '$', value: '$' },
@@ -101,21 +102,25 @@ function Calendar() {
         { label: '$$$', value: '$$$' },
     ];
 
+    // Changes genre selection
     const handleGenreChange = (selectedOption) => {
         setSelectedGenre(selectedOption.value); 
         setGenrePlaceholder(selectedOption ? selectedOption.label : 'Select Genre');
     };
 
+    // Changes audience size selection
     const handleSizeChange = (selectedOption) => {
         setSelectedSize(selectedOption.value); 
         setSizePlaceholder(selectedOption ? selectedOption.label : 'Select Audience Size');
     };
 
+    // Changes pricepoint selection
     const handleCostChange = (selectedOption) => {
         setSelectedCost(selectedOption.value); 
         setCostPlaceholder(selectedOption ? selectedOption.label : 'Select Pricepoint');
     };
 
+    // Filters events based on selections
     const filteredEvents = selectedGenre === 'all' && selectedSize === 'all' && selectedCost === 'all'
     ? events
     : events.filter(event => (
@@ -140,7 +145,6 @@ function Calendar() {
                     placeholder={genrePlaceholder}
                     styles={customStyles}
                     aria-label="Select Genre"
-                    style="cursor: pointer;"
                 />
                 <Select 
                     value={selectedSize} 

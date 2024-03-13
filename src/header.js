@@ -10,10 +10,10 @@ function Header() {
                     <img src="/images/CurtainCallLogo.png" alt="Logo with gold theatrical curtains that says Seattle Curtain Call" />
                 </Link>
             </div>
-            <nav id="hamburger-nav">
+            <nav className='hamburger-nav'>
                 <label htmlFor="hamburger">&#9776;</label>
-                <input type="checkbox" id="hamburger"/>
-                <div id="hamburger-items">
+                <input type="checkbox" id="hamburger" className='hamburger'/>
+                <div className='hamburger-items'>
                     <Link to="/calendar">Event Calendar</Link>
                     <Link to="/events">Events</Link>
                     <Link to="/submission">Event Submission</Link>
