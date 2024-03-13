@@ -651,9 +651,15 @@ main {
     border-radius: 1em;
     box-shadow: 0em 0em 1em rgba(0, 0, 0, 0.1);
     padding: 2em;
-    width: 25em;
+    width: 85vw;
     /* adjust if needed to control width of rectangle */
     margin: 2em;
+}
+
+@media (min-width: 768px) {
+    .account-settings {
+        width: 25em;
+    }
 }
 
 .account-settings h2 {
@@ -715,13 +721,19 @@ main {
 }
 
 .profile-page-card {
-    width: 22em;
+    width: 75vw;
     margin: 2.5em; 
     background-color: #ffffff;
     border-radius: 1em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
   }
+
+@media (min-width: 768px) {
+    .profile-page-card {
+        width: 22em;
+    }
+}
   
 .profile-page-card img {
     width: 100%;
