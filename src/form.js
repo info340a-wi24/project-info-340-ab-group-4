@@ -241,7 +241,7 @@ function Form(){
                         </div>
 
                     </section>
-                    <button type="submit"><i alt="Submit">Submit</i></button>
+                    <button type="submit" aria-label="Submit">Submit</button>
                 </form>
             </section>
         </main>

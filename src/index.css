@@ -815,7 +815,11 @@ main section.form h2 {
 
 main form section.part input {
     height: 28px;
-    border-radius: 10px;
+    border-radius: .5em;
+}
+
+main form section.part #poster {
+    border-radius: 0em;
 }
 
 main section.form #com {
@@ -833,7 +837,23 @@ main form section.part {
 }
 
 main form section.part input#type {
-    width: 300px;
+    width: 24em;
+}
+
+main form section.part input#size {
+    width: 12em;
+}
+
+main form section.part input#price {
+    width: 8em;
+}
+
+main form section.part input#address_input, main section.form #des {
+    width: 25em;
+}
+
+main form section.part input#venue_input {
+    width: 20em;
 }
 
 main form section.part input#intro {
